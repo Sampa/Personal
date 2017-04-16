@@ -19,6 +19,7 @@ class ComposerStaticInitc1f2c44c31aac534099ffb2b113def7e
     public static $prefixLengthsPsr4 = array (
         'y' => 
         array (
+            'yii\\twig\\' => 9,
             'yii\\swiftmailer\\' => 16,
             'yii\\gii\\' => 8,
             'yii\\faker\\' => 10,
@@ -91,6 +92,10 @@ class ComposerStaticInitc1f2c44c31aac534099ffb2b113def7e
     );
 
     public static $prefixDirsPsr4 = array (
+        'yii\\twig\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/yiisoft/yii2-twig',
+        ),
         'yii\\swiftmailer\\' => 
         array (
             0 => __DIR__ . '/..' . '/yiisoft/yii2-swiftmailer',
@@ -237,6 +242,13 @@ class ComposerStaticInitc1f2c44c31aac534099ffb2b113def7e
     );
 
     public static $prefixesPsr0 = array (
+        'T' => 
+        array (
+            'Twig_' => 
+            array (
+                0 => __DIR__ . '/..' . '/twig/twig/lib',
+            ),
+        ),
         'P' => 
         array (
             'Prophecy\\' => 

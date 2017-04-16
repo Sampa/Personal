@@ -28,6 +28,8 @@ class SiteController extends Controller
      *
      * @return array
      */
+    public $layout = 'main';
+
     public function behaviors()
     {
         return [
@@ -123,7 +125,7 @@ class SiteController extends Controller
             return $this->refresh();
         } 
         
-        return $this->render('contact', [
+        return $this->render('contact.twig', [
             'model' => $model,
         ]);
     }

@@ -75,4 +75,13 @@ return array (
       '@yii/faker' => $vendorDir . '/yiisoft/yii2-faker',
     ),
   ),
+  'yiisoft/yii2-twig' => 
+  array (
+    'name' => 'yiisoft/yii2-twig',
+    'version' => '2.0.6.0',
+    'alias' => 
+    array (
+      '@yii/twig' => $vendorDir . '/yiisoft/yii2-twig',
+    ),
+  ),
 );

@@ -15,6 +15,35 @@ return [
         // here you can set theme used for your frontend application 
         // - template comes with: 'default', 'slate', 'spacelab' and 'cerulean'
         'view' => [
+            'class' => 'yii\web\View',
+            'renderers' => [
+                'twig' => [
+                    'class' => 'yii\twig\ViewRenderer',
+                    'cachePath' => '@runtime/Twig/cache',
+                    // Array of twig options:
+                    'options' => [
+                        'auto_reload' => true,
+                    ],
+                    'globals' => [
+                        'html' => ['class' => '\yii\helpers\Html'],
+                        'ListView' => ['class' => '\yii\widgets\ListView'],
+                        'Url' => ['class' => '\yii\helpers\Url'],
+                        'My' => ['class' => '\common\helpers\My'],
+
+                    ],
+                    'uses' => ['yii\bootstrap'],
+                    'functions' => [
+                        new \Twig_SimpleFunction('partial_render', function ($model,$foo) {
+                            return $foo->render('_index', ['model' => $model]);
+                        }, ['is_safe'=>['html']]),
+                        't' => '\common\helpers\My::t',
+                        'ListViewWidget' => 'yii\widgets\ListView::Widget',
+                        'HtmlSubmitButton' => '\yii\helpers\Html::submitButton',
+                        'CaptchaClassName' => '\yii\captcha\Captcha::className'
+                    ]
+                ],
+                // ...
+            ],
             'theme' => [
                 'pathMap' => ['@app/views' => '@webroot/themes/casual/views'],
                 'baseUrl' => '@web/themes/casual',

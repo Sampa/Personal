@@ -47,4 +47,8 @@ return [
      * You can set support email here.
      */
     'supportEmail' => 'support@example.com',
+
+    /**
+     *
+     */
 ];
