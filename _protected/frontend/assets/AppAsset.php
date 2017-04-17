@@ -29,7 +29,8 @@ class AppAsset extends AssetBundle
     
     public $css = [
         'css/bootstrap.css',
-        'css/site.css',
+        'css/flag-icon.min.css',
+        'css/site.css'
     ];
     public $js = [
     ];

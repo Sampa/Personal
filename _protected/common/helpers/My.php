@@ -4,6 +4,7 @@
  * User: Happyjuiced
  * Date: 2017-04-16
  * Time: 16:25
+ * Static functions available in twig templates by there name eg: {{ t('Welcome') }}
  */
 
 namespace common\helpers;
@@ -21,5 +22,14 @@ class My extends Object
     public static function t($string,$category="app")
     {
         return Yii::t($category,$string);
+    }
+
+    /**
+     * @param $string key in the common\config\params.php array
+     * @return mixed the param value
+     */
+    public static function param($string)
+    {
+        return Yii::$app->params[$string];
     }
 }

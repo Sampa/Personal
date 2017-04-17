@@ -3,6 +3,7 @@
  * Copyright 2013-2016 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
  */
+@import url('https://fonts.googleapis.com/css?family=UnifrakturCook:700');
 
 body {
     font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -12,18 +13,96 @@ body {
     background-size: cover;
     -o-background-size: cover;
 }
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    text-transform: uppercase;
-    font-family: "Josefin Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
+h1,h2,h3,h4,h5,h6 {
+    /*text-transform: uppercase;*/
+    font-family: 'UnifrakturCook', cursive;
+    /*font-family: "Josefin Slab","Helvetica Neue",Helvetica,Arial,sans-serif;*/
     font-weight: 700;
     letter-spacing: 1px;
+    color: rgb(165,0,0);
+
 }
+.dropdown-toggle > .flag {
+    min-width: 3rem;
+    min-height: 3rem;
+}
+#selectLang {
+    z-index: 9999;
+    position: absolute;
+    top: -5px;
+    right: 0;
+}
+#selectLang ul li {
+    float: left;
+}
+/* big screens the red hand */
+.redhand{display: none;}
+.brand img{
+    height: 150px;
+    width: auto;
+    float: left;
+}
+.brand div{
+    z-index: 999;
+    display: block;
+    margin: 0;
+    padding: 0;
+    /*position: absolute;*/
+    /*float: left;*/
+    position: relative;
+    font-family: 'UnifrakturCook', cursive;
+    color: rgb(165,0,0);
+    font-size: 28px;
+
+}
+@media screen and (min-width: 768px) {
+    .redhand img{
+        height: 90px;
+        width: auto;
+    }
+    .redhand{
+        z-index: 999;
+        display: block;
+        margin: 0;
+        padding: 0;
+        /*position: absolute;*/
+        float: left;
+        position: relative;
+        font-family: 'UnifrakturCook', cursive;
+        color: rgb(165,0,0);
+        font-size: 18px;
+
+    }
+}
+/*menu collapsed*/
+.dovieBrand {
+    width: 100%;
+    position: absolute;
+    top: 0px;
+
+}
+.dovieBrand img {
+    height: 50px;
+    width: auto;
+    margin: 0;
+    padding: 0;
+}
+
+.dovieBrand span {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'UnifrakturCook', cursive;
+    color: rgb(165, 0, 0);
+}
+/* END MENU COLL*/
+.top{
+    /*background: url('../img/redhand.svg') no-repeat center center fixed;*/
+    /*-webkit-background-size: cover;*/
+    /*-moz-background-size: cover;*/
+    /*background-size: cover;*/
+    /*-o-background-size: cover;*/
+}
+
 
 p {
     font-size: 1.25em;
@@ -35,10 +114,16 @@ hr {
     max-width: 400px;
     border-color: #999999;
 }
-
+.brand {
+    font-family: 'UnifrakturCook', cursive;
+}
 .brand,
 .address-bar {
     display: none;
+}
+.navbar-toggle{
+    position: relative;
+    z-index: 9999;
 }
 
 .navbar-brand {
@@ -82,12 +167,12 @@ hr {
     padding: 30px 15px;
     background: #fff;
     background: rgba(255,255,255,0.9);
+
 }
 
 .intro-text {
-    text-transform: uppercase;
-    font-size: 1.25em;
-    font-weight: 400;
+    /*text-transform: uppercase;*/
+    font-size: 2.55em;
     letter-spacing: 1px;
 }
 
@@ -111,19 +196,20 @@ footer p {
     margin: 0;
     padding: 50px 0;
 }
+@media screen and (min-width: 768px){
 
-@media screen and (min-width:768px) {
     .brand {
         display: inherit;
         margin: 0;
         padding: 30px 0 10px;
         text-align: center;
         text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-        font-family: "Josefin Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-family: 'UnifrakturCook', cursive;
         font-size: 5em;
         font-weight: 700;
         line-height: normal;
-        color: #fff;
+        /*color: #fff;*/
+        color: rgb(165,0,0);
     }
 
     .top-divider {
@@ -146,6 +232,7 @@ footer p {
         font-weight: 400;
         letter-spacing: 3px;
         color: #fff;
+        /*color: rgb(165,0,0);*/
     }
 
     .navbar {
@@ -181,6 +268,7 @@ footer p {
         table-layout: fixed;
         font-size: 1.25em;
     }
+
 }
 
 @media screen and (min-width:1200px) {
@@ -190,6 +278,7 @@ footer p {
         clear: both;
     }
 }
+
 /*-- Sorting --*/
 
 /* add sorting icons to gridview sort links */

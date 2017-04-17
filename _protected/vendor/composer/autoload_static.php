@@ -43,6 +43,7 @@ class ComposerStaticInitc1f2c44c31aac534099ffb2b113def7e
         ),
         'c' => 
         array (
+            'codemix\\localeurls\\' => 19,
             'cebe\\markdown\\' => 14,
         ),
         'W' => 
@@ -142,6 +143,10 @@ class ComposerStaticInitc1f2c44c31aac534099ffb2b113def7e
         'mihaildev\\ckeditor\\' => 
         array (
             0 => __DIR__ . '/..' . '/mihaildev/yii2-ckeditor',
+        ),
+        'codemix\\localeurls\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/codemix/yii2-localeurls',
         ),
         'cebe\\markdown\\' => 
         array (

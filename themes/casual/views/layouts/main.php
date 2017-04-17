@@ -55,11 +55,11 @@ AppAsset::register($this);
         $menuItems[] = ['label' => Yii::t('app', 'Contact'), 'url' => ['/site/contact']];
     }
 
-    // display Article admin page to editor+ roles
-    if (Yii::$app->user->can('editor'))
-    {
-        $menuItems[] = ['label' => Yii::t('app', 'Articles'), 'url' => ['/article/admin']];
-    }
+        // display Article admin page to editor+ roles
+        if (Yii::$app->user->can('editor'))
+        {
+            $menuItems[] = ['label' => Yii::t('app', 'Articles'), 'url' => ['/article/admin']];
+        }
 
     // display Signup and Login pages to guests of the site
     if (Yii::$app->user->isGuest)

@@ -84,4 +84,13 @@ return array (
       '@yii/twig' => $vendorDir . '/yiisoft/yii2-twig',
     ),
   ),
+  'codemix/yii2-localeurls' => 
+  array (
+    'name' => 'codemix/yii2-localeurls',
+    'version' => '1.4.10.0',
+    'alias' => 
+    array (
+      '@codemix/localeurls' => $vendorDir . '/codemix/yii2-localeurls',
+    ),
+  ),
 );

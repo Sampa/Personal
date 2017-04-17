@@ -13,6 +13,15 @@ use Yii;
  */
 class FrontendController extends Controller
 {
+    public $layout = 'main.twig';
+
+    public function init()
+    {
+        parent::init();
+        #add your logic: read the cookie and then set the language
+        //\Yii::$app->language = isset($_GET['lang']) ? $_GET['lang'] : 'en_US';
+    }
+
     /**
      * Returns a list of behaviors that this component should behave as.
      * Here we use RBAC in combination with AccessControl filter.

@@ -1,8 +1,8 @@
 <?php
 return [
     'name' => 'Sampa',
-    //'language' => 'sr',
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
+    'language' => 'en',
     'components' => [
         'assetManager' => [
             'bundles' => [
@@ -29,9 +29,16 @@ return [
             'class' => 'yii\caching\FileCache',
         ],
         'urlManager' => [
-            'class' => 'yii\web\UrlManager',
+            'class' => 'codemix\localeurls\UrlManager',
+            // List all supported languages here
+            'languages' => ['en', 'se', 'ru'],
             'enablePrettyUrl' => true,
             'showScriptName' => false,
+            /*languageCookieDuration: How long in seconds to store the language information in a cookie.
+             Set to false to disable the cookie.
+            languageCookieName: The name of the language cookie. Default is _language.
+            languageCookieOptions: Other options to set on the language cookie.
+            languageSessionKey: The name of the language session key. Default is _language.*/
         ],
        /* 'session' => [
             'class' => 'yii\web\DbSession',

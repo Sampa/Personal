@@ -5,11 +5,13 @@ $params = array_merge(
     require(__DIR__ . '/params.php'),
     require(__DIR__ . '/params-local.php')
 );
+use \yii\helpers\Url;
 
 return [
     'id' => 'app-frontend',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
+    'language' => 'en',
     'controllerNamespace' => 'frontend\controllers',
     'components' => [
         // here you can set theme used for your frontend application 
@@ -29,6 +31,7 @@ return [
                         'ListView' => ['class' => '\yii\widgets\ListView'],
                         'Url' => ['class' => '\yii\helpers\Url'],
                         'My' => ['class' => '\common\helpers\My'],
+                        //'LanguageSelector' => ['class' => 'frontend\widgets\LanguageSelector']
 
                     ],
                     'uses' => ['yii\bootstrap'],
@@ -37,9 +40,20 @@ return [
                             return $foo->render('_index', ['model' => $model]);
                         }, ['is_safe'=>['html']]),
                         't' => '\common\helpers\My::t',
+                        'param' => '\common\helpers\My::param',
                         'ListViewWidget' => 'yii\widgets\ListView::Widget',
-                        'HtmlSubmitButton' => '\yii\helpers\Html::submitButton',
-                        'CaptchaClassName' => '\yii\captcha\Captcha::className'
+                        'LanguageSelector' => 'frontend\widgets\LanguageSelector::Widget',
+                        'CaptchaClassName' => '\yii\captcha\Captcha::className',
+                        'HtmlCsrfMetaTags' => '\yii\helpers\Html::csrfMetaTags',
+                        new \Twig_SimpleFunction('urlto', function($url,$options) {
+                            return Url::to(array_merge($url,$options));
+                        }),
+                        new \Twig_SimpleFunction('pathto', function($url,$options) {
+                            return Url::to(array_merge($url,$options));
+                        }),
+                        new \Twig_SimpleFunction('html', function($name, $arguments=[]) {
+                            return call_user_func_array(array('\yii\helpers\Html', $name), $arguments);
+                        }),
                     ]
                 ],
                 // ...

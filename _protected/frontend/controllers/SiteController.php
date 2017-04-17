@@ -21,14 +21,14 @@ use Yii;
  * It is responsible for displaying static pages, logging users in and out,
  * sign up and account activation, password reset.
  */
-class SiteController extends Controller
+class SiteController extends FrontendController
 {
     /**
      * Returns a list of behaviors that this component should behave as.
      *
      * @return array
      */
-    public $layout = 'main';
+    public $layout = 'main.twig';
 
     public function behaviors()
     {
@@ -98,7 +98,7 @@ class SiteController extends Controller
      */
     public function actionAbout()
     {
-        return $this->render('about');
+        return $this->render('about.twig');
     }
 
     /**
