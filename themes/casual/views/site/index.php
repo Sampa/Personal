@@ -3,7 +3,7 @@ use \yii\helpers\Url;
 use \yii\helpers\Html;
 
 ?>
-
+<div class="container">
 <div class="row">
     <div class="box">
         <div class="col-lg-12 text-center">
@@ -80,7 +80,7 @@ use \yii\helpers\Html;
         </div>
     </div>
 </div>
-
+</div>
 
 
 

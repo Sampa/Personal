@@ -1,0 +1,65 @@
+{{ use('yii\helpers\Html') }}
+{{ use('yii\widgets\Detailview') }}
+
+{# @var $this yii\web\View #}
+{#@var model frontend\models\Article #}
+{{ set(this, 'title', model.title ) }}
+
+{# $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Articles'), 'url' => ['index']]; #}
+{#$this->params['breadcrumbs'][] = $this->title;#}
+
+<div class="container" style="border: 1px solid red;">
+    <div class="row">
+        <div class="sidebox col-lg-12" style="border: 1px solid green;">
+            <div class="col-lg-4" style="border: 1px solid black;">
+              <h1 class="text-center">{{ this.title }}</h1>
+              <hr>
+            <div class="" style="border: 1px solid blue;">
+                <p> {{ model.summary }}</p>
+
+                <span class="time">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                    <small>
+                        {{ model.created_at|date('F j/Y') }}
+                        <span class="glyphicon glyphicon-time"></span>
+                        {{ model.created_at|date('G:i') }}
+                    </small>
+                </span>
+                <span class="glyphicon glyphicon-tags"></span>
+                {{ model.getCategoryName() }}
+                <span class="glyphicon glyphicon-user"></span>
+                {{ model.getAuthorName() }}
+            </div>
+            </div>
+
+            <div class="col-lg-8" style="border: 1px solid #ffa800">
+                {{ model.content | raw }}
+            </div>
+
+
+
+
+            <div class="pull-right">
+
+            {% if app.user.can('adminArticle') %}
+
+                {{ html('a',[t('Back'), ['admin'], {'class': 'btn btn-warning'}]) |raw }}
+
+            {%  endif %}
+                
+                {% if app.user.can('updateArticle', {'model': model}) %}
+
+                <a href="{{ path('article/update', {'id': model.id}) }}" class="btn btn-primary">{{ t('Update') }}</a>
+                {% endif %}
+
+                {% if app.user.can('deleteArticle') %}
+                <a href="{{ path('article/delete', {'id': model.id}) }}" class="btn btn-primary"
+                   data-method="post"
+                   data-confirm="{{ t('Are you sure you want to delete this article?') }}">{{ t('delete') }}</a>
+                {% endif %}
+
+            </div>
+
+        </div>
+    </div>
+</div>

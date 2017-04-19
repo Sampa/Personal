@@ -22,18 +22,29 @@ h1,h2,h3,h4,h5,h6 {
     color: rgb(165,0,0);
 
 }
-.dropdown-toggle > .flag {
+.flag {
     min-width: 3rem;
     min-height: 3rem;
 }
+aside{
+    height:900px;padding: 0; padding-top: 0px;
+    margin-top: 0px;
+    margin-left: -20px;
+    background: #fff;
+    background: rgba(255,255,255,0.9);
+    z-index: 2;
+    position: relative;
+}
+
 #selectLang {
     z-index: 9999;
-    position: absolute;
-    top: -5px;
-    right: 0;
+    position: relative;
+    top: 0px;
+    left: 0px;
 }
 #selectLang ul li {
-    float: left;
+    position: relative;
+    padding: 0;
 }
 /* big screens the red hand */
 .redhand{display: none;}
@@ -53,6 +64,12 @@ h1,h2,h3,h4,h5,h6 {
     font-family: 'UnifrakturCook', cursive;
     color: rgb(165,0,0);
     font-size: 28px;
+}
+
+.sidebox {
+    margin-bottom: 20px;
+    border-radius:5px;
+    background: rgba(255,255,255,0.9);
 
 }
 @media screen and (min-width: 768px) {

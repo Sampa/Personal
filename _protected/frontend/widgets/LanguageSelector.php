@@ -57,8 +57,8 @@ class LanguageSelector extends Dropdown{
      */
     public function run()
     {
-        BootstrapPluginAsset::register($this->getView());
-        $this->registerClientEvents();
+//        BootstrapPluginAsset::register($this->getView());
+//        $this->registerClientEvents();
         return $this->renderItems($this->items, $this->options);
     }
 
@@ -103,13 +103,13 @@ class LanguageSelector extends Dropdown{
                 }
                 $content = Html::a($label, $url === null ? '#' : $url, $linkOptions)
                     . $this->renderItems($item['items'], $submenuOptions);
-                Html::addCssClass($itemOptions, ['widget' => 'dropdown-submenu']);
+                Html::addCssClass($itemOptions, ['widget' => '']);
             }
 
             $lines[] = Html::tag('li', $content, $itemOptions);
         }
 
-       return '<div class="dropdown">' . $this->flag() . Html::tag('ul', implode("\n", $lines), $options) . '</div>';
+       return '<div class="">' . $this->flag() . Html::tag('ul', implode("\n", $lines), $options) . '</div>';
     }
 
     protected function flag(){

@@ -30,9 +30,13 @@ class AppAsset extends AssetBundle
     public $css = [
         'css/bootstrap.css',
         'css/flag-icon.min.css',
-        'css/site.css'
+        'css/site.css',
+        'css/box.css',
+        'css/sidemenu.css'
     ];
     public $js = [
+        'js/theme.js',
+        'js/sidemenu.js',
     ];
     
     public $depends = [

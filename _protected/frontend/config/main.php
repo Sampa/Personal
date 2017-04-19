@@ -29,6 +29,7 @@ return [
                     'globals' => [
                         'html' => ['class' => '\yii\helpers\Html'],
                         'ListView' => ['class' => '\yii\widgets\ListView'],
+                        'GridView' => ['class' => '\yii\grid\GridView'],
                         'Url' => ['class' => '\yii\helpers\Url'],
                         'My' => ['class' => '\common\helpers\My'],
                         //'LanguageSelector' => ['class' => 'frontend\widgets\LanguageSelector']
@@ -42,9 +43,11 @@ return [
                         't' => '\common\helpers\My::t',
                         'param' => '\common\helpers\My::param',
                         'ListViewWidget' => 'yii\widgets\ListView::Widget',
+                        'GridViewWidget' => 'yii\grid\GridView::Widget',
                         'LanguageSelector' => 'frontend\widgets\LanguageSelector::Widget',
                         'CaptchaClassName' => '\yii\captcha\Captcha::className',
                         'HtmlCsrfMetaTags' => '\yii\helpers\Html::csrfMetaTags',
+                        'CssHelperArticleCategoryCss' => '\common\helpers\CssHelper::articleCategoryCss',
                         new \Twig_SimpleFunction('urlto', function($url,$options) {
                             return Url::to(array_merge($url,$options));
                         }),
@@ -54,6 +57,10 @@ return [
                         new \Twig_SimpleFunction('html', function($name, $arguments=[]) {
                             return call_user_func_array(array('\yii\helpers\Html', $name), $arguments);
                         }),
+                        new \Twig_SimpleFunction('GridView', function($options=[]) {
+                            return \yii\grid\GridView::widget([$options]);
+                        })
+
                     ]
                 ],
                 // ...

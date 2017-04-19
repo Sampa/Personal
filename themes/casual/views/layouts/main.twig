@@ -42,7 +42,6 @@
 
     {% if app.user.isGuest == false %}
         {% set menuItems = menuItems|merge([
-            {'label': 'Main', 'url': ['/site/index']},
             {'label': 'About', 'url': ['/site/about']},
             {
                 'label': t('logout') ~ '(' ~ app.user.identity.username ~ ')',
@@ -54,6 +53,7 @@
     {% else %}
         {% set menuItems = menuItems|merge([
             {'label': t('Login'), 'url': ['/site/login']},
+            {'label': t('Sign up'), 'url': ['/site/signup']},
         ])
     %}
 
@@ -65,22 +65,55 @@
 
     {{ nav_bar_end() }}
 
-<div class="container" >
-    <div class="row">
+<div class="container-fluid" >
 
-        <div class="col-lg-8 col-md-8">
-            {{ content | raw }}
-        </div>
+    <div class="row">
+        {{ content | raw }}
         <!-- right column -->
-        <aside class="col-lg-3 col-md-3 well col-lg-push-1 col-md-push-1" style="padding: 0; padding-top: 0px;">
-            <div id="selectLang">{{ LanguageSelector({'options': {'style': 'min-width:35px;'}}) | raw }}</div>
-            <form class="form-inline col-lg-12" role="search" style="padding: 0; border: 2px red solid;">
-                <input  style="border: 2px green solid" type="text" class=" col-lg-8 form-control" id="exampleInputName2" placeholder="{{ t('Search term') }}">
-                <button type="submit" class="btn btn-default" style="border: 2px red solid;">
-                    <span class="glyphicon glyphicon-search"></span>
-                </button>
-            </form>
-        </aside>
+        {#<aside class="col-lg-3 col-md-3 col-lg-push-1 col-md-push-1">#}
+        <div id="slide-out-search" >
+            <a class="handle btn btn-lg" href="#" role="button" >
+                Search <span class="glyphicon glyphicon-search"></span>
+            </a>
+            <div class="sidebox shadow6" style="padding: 15px 5px;">
+                <form class="form-inline" role="search">
+                    <input type="text" class="form-control" id="exampleInputName2" placeholder="{{ t('Search term') }}">
+                    <button type="submit" class="btn btn-default" style="">
+                        <span class="glyphicon glyphicon-search"></span>
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <div id="slide-out-language"  style="">
+            {% set language = 'se' %}
+            {% if app.language == 'en' %}
+                {% set language = 'us' %}
+            {% endif %}
+            <a class="handle btn btn-lg" href="#" role="button">
+                Language <span class="flag-icon flag-icon-{{ language }}"></span>
+            </a>
+            <div class="sidebox shadow6" style="padding: 15px 5px;">
+                <div class="btn-group-vertical" role="group" aria-label="...">
+                    <a href="/en/site/index" class="btn btn-default "><span class="flag-icon flag-icon-us flag"></span></a>
+                    <a href="/se/site/index" class="btn btn-default "><span class="flag-icon flag-icon-se flag"></span></a>
+                </div>
+            </div>
+
+            {#{{ LanguageSelector({'options': {'class': 'list-inline', 'style': 'padding: 2px 0;'}}) | raw }}#}
+        </div>
+
+            {#<div class="sidebox shadowbox shadow6">
+                <h4 class=" text-center">Search</h4>
+                <form class="form-inline " role="search" style="padding: 0 0 30px 0;">
+                    <input type="text" class="col-lg-8 form-control" id="exampleInputName2" placeholder="{{ t('Search term') }}">
+                    <button type="submit" class="btn btn-default" style="">
+                        <span class="glyphicon glyphicon-search"></span>
+                    </button>
+                </form>
+            </div>#}
+
+        {#</aside>#}
 
     </div>
 </div>

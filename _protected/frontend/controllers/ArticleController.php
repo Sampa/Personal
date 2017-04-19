@@ -23,7 +23,7 @@ class ArticleController extends FrontendController
          * How many articles we want to display per page.
          * @var integer
          */
-        $pageSize = 2;
+        $pageSize = 5;
 
         /**
          * Articles have to be published.
@@ -47,7 +47,7 @@ class ArticleController extends FrontendController
      */
     public function actionView($id)
     {
-        return $this->render('view', [
+        return $this->render('view.twig', [
             'model' => $this->findModel($id),
         ]);
     }
@@ -97,7 +97,7 @@ class ArticleController extends FrontendController
             } 
             else 
             {
-                return $this->render('update', [
+                return $this->render('update.twig', [
                     'model' => $model,
                 ]);
             }
@@ -147,7 +147,7 @@ class ArticleController extends FrontendController
         $searchModel = new ArticleSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams, $pageSize, $published);
 
-        return $this->render('admin', [
+        return $this->render('admin.twig', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);

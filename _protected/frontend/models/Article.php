@@ -25,10 +25,24 @@ class Article extends ActiveRecord
 {
     const STATUS_DRAFT = 1;
     const STATUS_PUBLISHED = 2;
-
+    public $author;
+    public $_status;
+    public $_category;
     const CATEGORY_ECONOMY = 1;
     const CATEGORY_SOCIETY = 2;
     const CATEGORY_SPORT = 3;
+
+    public function init(){
+       parent::init();
+       $this->on(self::EVENT_AFTER_FIND,[$this,'setCustomProps']);
+    }
+    public function setCustomProps(){
+
+        $this->author = $this->getAuthorName();
+        $this->_status = $this->getStatusName();
+        $this->_category = $this->getCategoryName();
+
+    }
 
     /**
      * Declares the name of the database table associated with this AR class.
@@ -77,6 +91,7 @@ class Article extends ActiveRecord
         return [
             'id' => Yii::t('app', 'ID'),
             'user_id' => Yii::t('app', 'Author'),
+            'author' => Yii::t('app', 'Author'),
             'title' => Yii::t('app', 'Title'),
             'summary' => Yii::t('app', 'Summary'),
             'content' => Yii::t('app', 'Content'),
@@ -136,11 +151,18 @@ class Article extends ActiveRecord
         }
     }
 
+    public function getUserList(){
+        $userArray = [
+            $this->user_id => $this->author
+        ];
+        return $userArray;
+    }
     /**
      * Returns the array of possible article status values.
      *
      * @return array
      */
+
     public function getStatusList()
     {
         $statusArray = [
@@ -190,4 +212,5 @@ class Article extends ActiveRecord
 
         return $statusArray;
     }
+
 }

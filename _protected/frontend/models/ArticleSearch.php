@@ -18,8 +18,8 @@ class ArticleSearch extends Article
     public function rules()
     {
         return [
-            [['id', 'user_id', 'status', 'category', 'created_at', 'updated_at'], 'integer'],
-            [['title', 'summary', 'content'], 'safe'],
+            [['id', 'status', 'category', 'created_at', 'updated_at'], 'integer'],
+            [['title', 'user_id', 'summary', '_status', '_category', 'content'], 'safe'],
         ];
     }
 
@@ -45,7 +45,8 @@ class ArticleSearch extends Article
      */
     public function search($params, $pageSize = 3, $published = false)
     {
-        $query = Article::find();
+        $query = Article::find()->joinWith(['user']);
+
 
         // this means that editor is trying to see articles
         // we will allow him to see published ones and drafts made by him
@@ -69,13 +70,12 @@ class ArticleSearch extends Article
 
         $query->andFilterWhere([
             'id' => $this->id,
-            'user_id' => $this->user_id,
-            'status' => $this->status,
+            'article.status' => $this->status,
             'category' => $this->category,
         ]);
-
         $query->andFilterWhere(['like', 'title', $this->title])
               ->andFilterWhere(['like', 'summary', $this->summary])
+              ->andFilterWhere(['like', 'user.username', $this->user_id])
               ->andFilterWhere(['like', 'content', $this->content]);
 
         return $dataProvider;

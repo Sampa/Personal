@@ -31,7 +31,7 @@ return [
         'urlManager' => [
             'class' => 'codemix\localeurls\UrlManager',
             // List all supported languages here
-            'languages' => ['en', 'se', 'ru'],
+            'languages' => ['en', 'se', 'ru','it','es'],
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             /*languageCookieDuration: How long in seconds to store the language information in a cookie.
