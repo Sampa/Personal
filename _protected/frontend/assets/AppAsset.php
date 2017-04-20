@@ -37,6 +37,7 @@ class AppAsset extends AssetBundle
     public $js = [
         'js/theme.js',
         'js/sidemenu.js',
+//        'js/bootstrap.js'
     ];
     
     public $depends = [

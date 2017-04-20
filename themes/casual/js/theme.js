@@ -1,15 +1,20 @@
 $(document).ready(function()
 {
+
     /**
      * right side slide out menu, initialize the plugin https://github.com/hawk-ip/jquery.tabSlideOut.js
-     *
      */
+    $('#slide-out-login').tabSlideOut({
+        tabLocation: 'right', // left(default), right, top or bottom
+        tabHandle: '#slide-out-login-handler'
+    });
     $('#slide-out-language').tabSlideOut({
         tabLocation: 'right', // left(default), right, top or bottom
-
+        tabHandle: '#slide-out-language-handler'
     });
     $('#slide-out-search').tabSlideOut({
         tabLocation: 'right', // left(default), right, top or bottom
+        tabHandle: '#slide-out-search-handler'
         //offset: '200px',
         //offsetReverse:true
        /*

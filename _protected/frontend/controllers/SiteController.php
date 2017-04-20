@@ -170,7 +170,7 @@ class SiteController extends FrontendController
         // account is activated, but some other errors have happened
         else
         {
-            return $this->render('login', [
+            return $this->render('login.twig', [
                 'model' => $model,
             ]);
         }

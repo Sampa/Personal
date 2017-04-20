@@ -5,6 +5,8 @@ use yii\web\Controller;
 use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
 use Yii;
+use frontend\controllers\SiteController;
+use common\models\LoginForm;
 
 /**
  * FrontendController extends Controller and implements the behaviors() method
@@ -14,12 +16,33 @@ use Yii;
 class FrontendController extends Controller
 {
     public $layout = 'main.twig';
-
+    public $login = "";
     public function init()
     {
         parent::init();
         #add your logic: read the cookie and then set the language
-        //\Yii::$app->language = isset($_GET['lang']) ? $_GET['lang'] : 'en_US';
+    }
+
+    public function renderContent($content)
+    {
+        $layoutFile = $this->findLayoutFile($this->getView());
+        if ($layoutFile !== false) {
+            return $this->getView()->renderFile($layoutFile, ['content' => $content,'loginForm'=>new LoginForm()], $this);
+        }
+        return $content;
+    }
+    /**
+     * Renders a view without applying layout.
+     * This method differs from [[render()]] in that it does not apply any layout.
+     * @param string $view the view name. Please refer to [[render()]] on how to specify a view name.
+     * @param array $params the parameters (name-value pairs) that should be made available in the view.
+     * @return string the rendering result.
+     * @throws InvalidParamException if the view file does not exist.
+     */
+    public function renderPartial($view, $params = [])
+    {
+        $params[] = ['loginForm' => new LoginForm()];
+        return $this->getView()->render($view, $params, $this);
     }
 
     /**

@@ -4,12 +4,22 @@
 {# @var $this yii\web\View #}
 {#@var model frontend\models\Article #}
 {{ set(this, 'title', model.title ) }}
+{{ set(this, 'params', {
+    'breadcrumbs': [
+        {'label': t('Articles'), 'url': ['index']},
+        {'label': t(model.getCategoryName()), 'url': ['articles/category/'~model.getCategoryName()]},
+        {'label': this.title}
+        ]
+    }) }}
+{#{{ set(this, 'params', {'breadcrumbs': [t('Articles')]}) }}#}
+
 
 {# $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Articles'), 'url' => ['index']]; #}
 {#$this->params['breadcrumbs'][] = $this->title;#}
 
 <div class="container" style="border: 1px solid red;">
     <div class="row">
+
         <div class="sidebox col-lg-12" style="border: 1px solid green;">
             <div class="col-lg-4" style="border: 1px solid black;">
               <h1 class="text-center">{{ this.title }}</h1>

@@ -1,10 +1,12 @@
-/*!
+/*! BASED ON
  * Start Bootstrap - Business Casual (http://startbootstrap.com/)
  * Copyright 2013-2016 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
  */
 @import url('https://fonts.googleapis.com/css?family=UnifrakturCook:700');
-
+/**
+ * ELEMENTS AND SMALL HELPER CLASSES (more of them under "other" at the bottom)
+**/
 body {
     font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
     background: url('../img/bg.jpg') no-repeat center center fixed;
@@ -14,28 +16,72 @@ body {
     -o-background-size: cover;
 }
 h1,h2,h3,h4,h5,h6 {
-    /*text-transform: uppercase;*/
     font-family: 'UnifrakturCook', cursive;
-    /*font-family: "Josefin Slab","Helvetica Neue",Helvetica,Arial,sans-serif;*/
     font-weight: 700;
     letter-spacing: 1px;
     color: rgb(165,0,0);
+}
+p { font-size: 1.25em; line-height: 1.6; color: #000;}
 
+hr { max-width: 400px; border-color: #999999; }
+
+footer { background: #fff; background: rgba(255,255,255,0.9);}
+
+footer p { margin: 0; padding: 50px 0;}
+.oldRedText{
+    font-family: 'UnifrakturCook', cursive;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: rgb(165,0,0);
 }
-.flag {
-    min-width: 3rem;
-    min-height: 3rem;
+.sidebox {
+    margin-bottom: 20px;
+    border-radius:5px;
+    background: rgba(255,255,255,0.9);
 }
-aside{
-    height:900px;padding: 0; padding-top: 0px;
-    margin-top: 0px;
-    margin-left: -20px;
+.box {
+    margin-bottom: 20px;
+    padding: 30px 15px;
     background: #fff;
     background: rgba(255,255,255,0.9);
-    z-index: 2;
-    position: relative;
 }
 
+.intro-text { font-size: 2.55em; letter-spacing: 1px;}
+
+.img-border { float: none; margin: 0 auto 0; border: #999999 solid 1px; }
+
+.img-left {float: none;margin: 0 auto 0;}
+
+/**
+ * BREADCRUMBS
+ * http://bootstrapdesigntools.com/tools/bootstrap-breadcrumb-designer/
+**/
+.breadcrumb { /* breadcrumbs ul class */
+    text-align: center;
+    position:relative;
+    top: 0px;
+    width: 100%;
+    border: 0px solid rgba(165, 0, 0, 1);
+    border-radius: 4px;
+    display: block;
+    padding: 2px 15px ;
+    margin: 0 auto;
+    background: rgba(165, 0, 0, 0.76);
+
+}
+.breadcrumb li {font-size: 14px; }
+.breadcrumb a {color: rgba(255, 255, 255, 1); font-style: italic;}
+.breadcrumb a:hover {color: rgba(42, 100, 150, 1);}
+.breadcrumb .active {color: rgba(184, 184, 184, 1); }
+.breadcrumb>li+li:before {color: rgba(184, 184, 184, 1); content: "\276F\00a0";}
+/* END BREADCRUMBS */
+.indexWrap{
+    margin-top: 20px;
+}
+
+/**
+ * LANGUAGE SELECTING
+**/
 #selectLang {
     z-index: 9999;
     position: relative;
@@ -46,7 +92,11 @@ aside{
     position: relative;
     padding: 0;
 }
-/* big screens the red hand */
+/* Size of the flags in the language selector */
+.flag { min-width: 3rem; min-height: 3rem; }
+
+
+/* big screens the top part of the layout */
 .redhand{display: none;}
 .brand img{
     height: 150px;
@@ -65,32 +115,11 @@ aside{
     color: rgb(165,0,0);
     font-size: 28px;
 }
+/* end top part */
 
-.sidebox {
-    margin-bottom: 20px;
-    border-radius:5px;
-    background: rgba(255,255,255,0.9);
-
-}
-@media screen and (min-width: 768px) {
-    .redhand img{
-        height: 90px;
-        width: auto;
-    }
-    .redhand{
-        z-index: 999;
-        display: block;
-        margin: 0;
-        padding: 0;
-        /*position: absolute;*/
-        float: left;
-        position: relative;
-        font-family: 'UnifrakturCook', cursive;
-        color: rgb(165,0,0);
-        font-size: 18px;
-
-    }
-}
+/**
+ * RELATED TO MENU/NAVBAR
+**/
 /*menu collapsed*/
 .dovieBrand {
     width: 100%;
@@ -111,36 +140,15 @@ aside{
     font-family: 'UnifrakturCook', cursive;
     color: rgb(165, 0, 0);
 }
-/* END MENU COLL*/
-.top{
-    /*background: url('../img/redhand.svg') no-repeat center center fixed;*/
-    /*-webkit-background-size: cover;*/
-    /*-moz-background-size: cover;*/
-    /*background-size: cover;*/
-    /*-o-background-size: cover;*/
-}
-
-
-p {
-    font-size: 1.25em;
-    line-height: 1.6;
-    color: #000;
-}
-
-hr {
-    max-width: 400px;
-    border-color: #999999;
-}
-.brand {
-    font-family: 'UnifrakturCook', cursive;
-}
-.brand,
-.address-bar {
-    display: none;
-}
+/*Button that slides out the menu when it's collapsed*/
 .navbar-toggle{
     position: relative;
     z-index: 9999;
+}
+/* END MENU COLL*/
+
+.brand {
+    font-family: 'UnifrakturCook', cursive;
 }
 
 .navbar-brand {
@@ -159,8 +167,7 @@ hr {
     min-width: 100%;
 }
 
-.brand-before,
-.brand-name {
+.brand-before, .brand-name {
     text-transform: capitalize;
 }
 
@@ -179,42 +186,31 @@ hr {
     border-color: #999999;
 }
 
-.box {
-    margin-bottom: 20px;
-    padding: 30px 15px;
-    background: #fff;
-    background: rgba(255,255,255,0.9);
+/**
+ * SPECIAL CSS FOR DIFFERENT SCREEN SIZES
+**/
 
-}
-
-.intro-text {
-    /*text-transform: uppercase;*/
-    font-size: 2.55em;
-    letter-spacing: 1px;
-}
-
-.img-border {
-    float: none;
-    margin: 0 auto 0;
-    border: #999999 solid 1px;
-}
-
-.img-left {
-    float: none;
-    margin: 0 auto 0;
-}
-
-footer {
-    background: #fff;
-    background: rgba(255,255,255,0.9);
-}
-
-footer p {
-    margin: 0;
-    padding: 50px 0;
-}
+/* top part of the layout. Only display these on smaller screens */
+.brand, .address-bar { display: none; }
+/* BIG SCREENS */
 @media screen and (min-width: 768px){
+    .redhand img{
+        height: 90px;
+        width: auto;
+    }
+    .redhand{
+        z-index: 999;
+        display: block;
+        margin: 0;
+        padding: 0;
+        /*position: absolute;*/
+        float: left;
+        position: relative;
+        font-family: 'UnifrakturCook', cursive;
+        color: rgb(165,0,0);
+        font-size: 18px;
 
+    }
     .brand {
         display: inherit;
         margin: 0;
@@ -225,7 +221,6 @@ footer p {
         font-size: 5em;
         font-weight: 700;
         line-height: normal;
-        /*color: #fff;*/
         color: rgb(165,0,0);
     }
 
@@ -262,6 +257,7 @@ footer p {
 
     .navbar {
         min-height: 0;
+        margin-bottom: 0;
     }
 
     .navbar-default {
@@ -271,7 +267,7 @@ footer p {
     }
 
     .nav>li>a {
-        padding: 35px;
+        padding: 25px;
     }
 
     .navbar-nav>li>a {
@@ -450,4 +446,17 @@ hr.article-devider {
 /* hide strength meter so we can fade it in nicely with jQuery */
 .nz-meter-container {
     display: none;
+}
+
+/**
+ *Currently not used, incase of two column layout
+**/
+aside{
+    height:900px;padding: 0; padding-top: 0px;
+    margin-top: 0px;
+    margin-left: -20px;
+    background: #fff;
+    background: rgba(255,255,255,0.9);
+    z-index: 2;
+    position: relative;
 }

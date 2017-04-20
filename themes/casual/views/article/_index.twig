@@ -1,16 +1,16 @@
 {{ set(this, 'title', t(app.name) ~' '~ model.title ) }}
 
 <div class="box col-lg-12 text-center">
-    <h2 class="intro-text text-center">{{ model.title }} </h2>
+    <h2 class="intro-text text-center"><a href="view?id={{ model.id }}" class="oldRedText"> {{ model.title }} </a></h2>
     <hr>
+    <p class="time">
+        <span class="glyphicon glyphicon-time"></span>
+        <small>{{ model.created_at|date('F j, Y ') }}
+        <span class="glyphicon glyphicon-user"></span> {{ model.getAuthorName() }}</small>
+    </p>
     <img class="img-responsive img-border img-full" src="{{ this.theme.getUrl('img/slide-1.jpg') }}" alt="">
 
-        <p class="time">
-            <span class="glyphicon glyphicon-time"></span>
-            <small>{{ model.created_at|date('F j, Y ') }} </small>
-        </p>
-
     <p>{{ model.summary }}</p>
-    <a href="view?id={{ model.id }}" class="btn btn-default btn-lg">{{ t('Read more') }}</a>
+    <a href="view?id={{ model.id }}" class="oldRedText btn btn-default btn-lg">{{ t('Read more') }}</a>
 
 </div>

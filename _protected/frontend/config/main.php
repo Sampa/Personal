@@ -30,6 +30,7 @@ return [
                         'html' => ['class' => '\yii\helpers\Html'],
                         'ListView' => ['class' => '\yii\widgets\ListView'],
                         'GridView' => ['class' => '\yii\grid\GridView'],
+                        'Breadcrumbs' => ['class' => '\yii\widgets\Breadcrumbs'],
                         'Url' => ['class' => '\yii\helpers\Url'],
                         'My' => ['class' => '\common\helpers\My'],
                         //'LanguageSelector' => ['class' => 'frontend\widgets\LanguageSelector']
@@ -59,6 +60,9 @@ return [
                         }),
                         new \Twig_SimpleFunction('GridView', function($options=[]) {
                             return \yii\grid\GridView::widget([$options]);
+                        }),
+                        new \Twig_SimpleFunction('Breadcrumbs', function($options=[]) {
+                            return \yii\widgets\Breadcrumbs::widget($options);
                         })
 
                     ]
