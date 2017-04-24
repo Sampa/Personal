@@ -12,21 +12,28 @@
     }
 }
 */
-#slide-out-search > a, #slide-out-login > a{
+@media screen and (max-width: 768px){
+
+    .ui-slideouttab-handle {
+        margin-top:60px;
+    }
+
+}
+#slide-out-search > a{
     margin-left: 3px;
 }
 #slide-out-search{
-    margin-top:100px;
+    margin-top:50px;
     z-index: 999;
     position: relative;
 }
 #slide-out-language{
-    margin-top:200px;
+    margin-top:95px;
     z-index: 999;
     position: relative;
 }
 #slide-out-login{
-    margin-top:-30px;
+    margin-top:5px;
     z-index: 999;
     position: relative;
 }

@@ -6,16 +6,19 @@ $(document).ready(function()
      */
     $('#slide-out-login').tabSlideOut({
         tabLocation: 'right', // right(default), right, top or bottom
-        tabHandle: '#slide-out-login-handler'
+        tabHandle: '#slide-out-login-handler',
+        offset: '0px'
     });
     $('#slide-out-language').tabSlideOut({
         tabLocation: 'right', // right(default), right, top or bottom
-        tabHandle: '#slide-out-language-handler'
+        tabHandle: '#slide-out-language-handler',
+        offset: '0px',
+
     });
     $('#slide-out-search').tabSlideOut({
         tabLocation: 'right', // left(default), right, top or bottom
         tabHandle: '#slide-out-search-handler',
-        //offset: '200px',
+        offset: '0px',
         //offsetReverse:true
        /*
         * defaults:
