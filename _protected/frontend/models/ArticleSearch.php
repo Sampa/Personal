@@ -43,7 +43,7 @@ class ArticleSearch extends Article
      *
      * @return ActiveDataProvider
      */
-    public function search($params, $pageSize = 3, $published = false)
+    public function search( $params, $pageSize = 3, $published = false,$category=null)
     {
         $query = Article::find()->joinWith(['user']);
 
@@ -64,9 +64,14 @@ class ArticleSearch extends Article
             ]
         ]);
 
+        if(isset($category)){
+            $query->andFilterWhere(['category' => $category]);
+        }
+
         if (!($this->load($params) && $this->validate())) {
             return $dataProvider;
         }
+
 
         $query->andFilterWhere([
             'id' => $this->id,

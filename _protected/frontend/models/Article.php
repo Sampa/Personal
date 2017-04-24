@@ -5,6 +5,7 @@ use common\models\User;
 use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
 use Yii;
+use yii\helpers\Html;
 
 /**
  * This is the model class for table "{{%article}}".
@@ -31,6 +32,7 @@ class Article extends ActiveRecord
     const CATEGORY_ECONOMY = 1;
     const CATEGORY_SOCIETY = 2;
     const CATEGORY_SPORT = 3;
+    const CATEGORY_URL = "/articles/";
 
     public function init(){
        parent::init();
@@ -196,7 +198,28 @@ class Article extends ActiveRecord
             return Yii::t('app', 'Sport');
         }
     }
-
+    /**
+     * Returns the article category as int.
+     *
+     * @param  null|string $category Category string value if sent to method.
+     * @return int category number
+     */
+    public static function getCategoryId($category)
+    {
+        $category = ucfirst($category);
+        if (Yii::t('app', 'Economy') === $category)
+        {
+            return self::CATEGORY_ECONOMY;
+        }
+        elseif (Yii::t('app', 'Society') === $category)
+        {
+            return self::CATEGORY_SOCIETY;
+        }
+        else
+        {
+            return self::CATEGORY_SPORT;
+        }
+    }
     /**
      * Returns the array of possible article category values.
      *
@@ -212,5 +235,35 @@ class Article extends ActiveRecord
 
         return $statusArray;
     }
+    /**
+     * Returns an array of the categories in with links
+     * @param $array an array of the available categories
+     */
 
+    public static function getCategoryListItems($array=null,$type="li",$options=[],$linkOptions=[])
+    {
+        $model = new Article();
+        if(!isset($array)){
+            $array = $model->getCategoryList();
+        }
+        $itemsArr = [];
+        if($type='li') {
+            foreach ($array as $db => $text) {
+                $liOptions = $options;
+                if($text == Yii::$app->request->queryParams['category']){
+                   if(isset($linkOptions['class'])) {
+                       $liOptions['class'] = $liOptions['class'] . ' active';
+                   } else {
+                       $liOptions['class'] = 'active';
+                   }
+                }
+                $itemsArr[] = Html::tag('li', Html::a($text, [self::CATEGORY_URL . $text], $linkOptions), $liOptions);
+            }
+        } elseif($type='menu'){
+            foreach($array as $db => $text){
+                $itemsArr[] = [ 'label' => $text, 'url' => [self::CATEGORY_URL . $text] ];
+            }
+        }
+        return $itemsArr;
+    }
 }

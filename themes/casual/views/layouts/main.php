@@ -5,11 +5,13 @@ use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
+use yii\widgets\Pjax;
 
 /* @var $this \yii\web\View */
 /* @var $content string */
 
 AppAsset::register($this);
+
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -36,6 +38,7 @@ AppAsset::register($this);
 <div class="brand">Business Casual</div>
 <div class="address-bar">3481 Melrose Place | Beverly Hills, CA 90210 | 123.456.7890</div>
 <div class="wrap">
+    <?php Pjax::begin(); ?>
     <?php
     NavBar::begin([
         'brandLabel' => Yii::t('app', Yii::$app->name),
@@ -84,7 +87,18 @@ AppAsset::register($this);
     NavBar::end();
     ?>
     <div class="container">
+        <div class="col-xs-4 col-xs-push-5">
+            <ul class="nav nav-tabs ">
+                <?php
+                    use frontend\models\Article;
+                    foreach(Article::getCategoryListItems(null,'li',['role' => 'presentation'], ['style' => 'color: rgb(165,0,0)']) as $li){
+                        echo $li;
+                    }
+                ?>
+            </ul>
+        </div>
         <?= $content ?>
+        <?php Pjax::end(); ?>
     </div>
     <footer>
         <div class="container">

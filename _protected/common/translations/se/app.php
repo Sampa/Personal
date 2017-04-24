@@ -30,6 +30,7 @@ return [
     'Logout'   => 'Logga ut',
     'Users'    => 'Användare',
     'Articles' => 'Artiklar',
+    'articles' => 'artiklar',
     'Register' => 'Registrera',
 
     //-- static pages --//

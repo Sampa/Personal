@@ -19,25 +19,35 @@ class ArticleController extends FrontendController
      */
     public function actionIndex()
     {
+
         /**
          * How many articles we want to display per page.
          * @var integer
          */
-        $pageSize = 1;
+        $pageSize = 4;
 
         /**
          * Articles have to be published.
          * @var boolean
          */
         $published = true;
-
         $searchModel = new ArticleSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams, $pageSize, $published);
+        $params = Yii::$app->request->queryParams;
+        if(isset(Yii::$app->request->queryParams['category'])){
+            $category =  Yii::$app->request->queryParams['category'];
+            if( is_string($category) ) {
+                $category = Article::getCategoryId($category);
+                $dataProvider = $searchModel->search($params, $pageSize, $published,$category);
+            }
+        } else {
+            $dataProvider = $searchModel->search($params, $pageSize, $published);
+        }
         return $this->render('index.twig', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
     }
+
 
     /**
      * Displays a single Article model.
@@ -45,12 +55,14 @@ class ArticleController extends FrontendController
      * @param  integer $id
      * @return mixed
      */
-    public function actionView($id)
+    public function actionView($id,$title="")
     {
         return $this->render('view.twig', [
             'model' => $this->findModel($id),
         ]);
     }
+
+
 
     /**
      * Creates a new Article model.

@@ -29,18 +29,17 @@ return [
                     'globals' => [
                         'html' => ['class' => '\yii\helpers\Html'],
                         'ListView' => ['class' => '\yii\widgets\ListView'],
+//                        'Pjax' => ['class' => '\yii\widgets\Pjax'],
                         'GridView' => ['class' => '\yii\grid\GridView'],
                         'Breadcrumbs' => ['class' => '\yii\widgets\Breadcrumbs'],
                         'Url' => ['class' => '\yii\helpers\Url'],
                         'My' => ['class' => '\common\helpers\My'],
+                        'Article' => ['class' => '\frontend\models\Article'],
                         //'LanguageSelector' => ['class' => 'frontend\widgets\LanguageSelector']
-
                     ],
                     'uses' => ['yii\bootstrap'],
                     'functions' => [
-                        new \Twig_SimpleFunction('partial_render', function ($model,$foo) {
-                            return $foo->render('_index', ['model' => $model]);
-                        }, ['is_safe'=>['html']]),
+
                         't' => '\common\helpers\My::t',
                         'param' => '\common\helpers\My::param',
                         'ListViewWidget' => 'yii\widgets\ListView::Widget',
@@ -48,6 +47,7 @@ return [
                         'LanguageSelector' => 'frontend\widgets\LanguageSelector::Widget',
                         'CaptchaClassName' => '\yii\captcha\Captcha::className',
                         'HtmlCsrfMetaTags' => '\yii\helpers\Html::csrfMetaTags',
+                        'ArticleCategoryListItems' => 'frontend\models\Article::getCategoryListItems',
                         'CssHelperArticleCategoryCss' => '\common\helpers\CssHelper::articleCategoryCss',
                         new \Twig_SimpleFunction('urlto', function($url,$options) {
                             return Url::to(array_merge($url,$options));
@@ -63,7 +63,14 @@ return [
                         }),
                         new \Twig_SimpleFunction('Breadcrumbs', function($options=[]) {
                             return \yii\widgets\Breadcrumbs::widget($options);
+                        }),
+                        new \Twig_SimpleFunction('PjaxBegin', function(){
+                             \yii\widgets\Pjax::begin();
+                        }),
+                        new \Twig_SimpleFunction('PjaxEnd', function(){
+                             \yii\widgets\Pjax::end();
                         })
+
 
                     ]
                 ],

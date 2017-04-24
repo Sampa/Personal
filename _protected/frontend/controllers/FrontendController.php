@@ -71,7 +71,7 @@ class FrontendController extends Controller
                     ],
                     [
                         'controllers' => ['article'],
-                        'actions' => ['index', 'view'],
+                        'actions' => ['index', 'view','category'],
                         'allow' => true
                     ],
                     [

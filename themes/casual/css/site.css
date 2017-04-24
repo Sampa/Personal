@@ -15,6 +15,10 @@ body {
     background-size: cover;
     -o-background-size: cover;
 }
+a:hover{
+    text-decoration: none;
+
+}
 h1,h2,h3,h4,h5,h6 {
     font-family: 'UnifrakturCook', cursive;
     font-weight: 700;
@@ -64,15 +68,15 @@ footer p { margin: 0; padding: 50px 0;}
     border: 0px solid rgba(165, 0, 0, 1);
     border-radius: 4px;
     display: block;
-    padding: 2px 15px ;
+    padding: 0px 15px ;
     margin: 0 auto;
-    background: rgba(165, 0, 0, 0.76);
+    background: rgba(165, 0, 0, 0.56);
 
 }
-.breadcrumb li {font-size: 14px; }
-.breadcrumb a {color: rgba(255, 255, 255, 1); font-style: italic;}
-.breadcrumb a:hover {color: rgba(42, 100, 150, 1);}
-.breadcrumb .active {color: rgba(184, 184, 184, 1); }
+.breadcrumb li{font-size: 14px; }
+.breadcrumb a {color: rgba(255, 255, 255, 1); font-weight: bold}
+.breadcrumb a:hover {color: rgba(35, 82, 124,1);}
+.breadcrumb .active {color: rgba(20, 20, 20, 1); font-weight: bold}
 .breadcrumb>li+li:before {color: rgba(184, 184, 184, 1); content: "\276F\00a0";}
 /* END BREADCRUMBS */
 .indexWrap{
@@ -163,6 +167,7 @@ footer p { margin: 0; padding: 50px 0;}
     letter-spacing: 3px;
 }
 
+
 .img-full {
     min-width: 100%;
 }
@@ -186,6 +191,26 @@ footer p { margin: 0; padding: 50px 0;}
     border-color: #999999;
 }
 
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus{
+    background: #fff;
+    background: rgba(255,255,255,0.9);
+}
+.categories-nav>ul>li{
+    background: #fff;
+    background: rgba(255,255,255,0.5);
+    border:0;
+    margin-top: -5px;
+    margin-bottom: 10px;
+    position: relative;
+}
+@media screen and (max-width: 768px){
+    .categories-nav{
+        margin-top: -30px;
+    }
+    .categories-nav>ul>li>a{
+        /*padding: 3px;*/
+    }
+}
 /**
  * SPECIAL CSS FOR DIFFERENT SCREEN SIZES
 **/
@@ -214,7 +239,7 @@ footer p { margin: 0; padding: 50px 0;}
     .brand {
         display: inherit;
         margin: 0;
-        padding: 30px 0 10px;
+        padding: 0px 0 20px;
         text-align: center;
         text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
         font-family: 'UnifrakturCook', cursive;
@@ -235,8 +260,8 @@ footer p { margin: 0; padding: 50px 0;}
 
     .address-bar {
         display: inherit;
-        margin: 0;
-        padding: 0 0 40px;
+        margin-top: -15px;
+        padding: 0 0 30px;
         text-align: center;
         text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
         text-transform: uppercase;
@@ -266,12 +291,17 @@ footer p { margin: 0; padding: 50px 0;}
         background: rgba(255,255,255,0.9);
     }
 
-    .nav>li>a {
+    .navbar-nav>li>a {
         padding: 25px;
+        line-height: normal;
     }
 
-    .navbar-nav>li>a {
-        line-height: normal;
+
+    .navbar-nav>li:hover{
+        background-color: #eee;
+    }
+    .navbar-default .navbar-nav > .active > a{
+        background-color: #fff;
     }
 
     .navbar-nav {

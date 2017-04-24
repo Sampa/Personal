@@ -8,14 +8,13 @@ $this->title = Yii::t('app', 'Create Article');
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Articles'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="article-create">
-
-    <h1><?= Html::encode($this->title) ?></h1>
-
-    <div class="col-lg-8 well bs-component">
+<div class="container ">
+    <div class="col-sm-8  col-sm-push-2 box">
+        <hr>
+        <h2 class="intro-text text-center"><?= Html::encode($this->title) ?></h2>
+        <hr>
 
         <?= $this->render('_form', ['model' => $model]) ?>
 
     </div>
-
 </div>

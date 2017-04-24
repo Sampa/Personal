@@ -28,7 +28,6 @@ class SiteController extends FrontendController
      *
      * @return array
      */
-    public $layout = 'main.twig';
 
     public function behaviors()
     {

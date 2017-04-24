@@ -12,74 +12,26 @@
 </head>
 <body>
 {{   void(this.beginBody()) }}
-<div class="top">
-    <div class="brand">
-            <img src="{{ app.view.theme.baseUrl }}/img/redhand.svg"> <span>Dovie' andi se tovya sagain</span>
+    <!-- TOP INTRO TEXTS + LOGO -->
+    <div class="brand"> <img src="{{ app.view.theme.baseUrl }}/img/redhand.svg"> <span>Dovie' andi se tovya sagain</span> </div>
+    <div class="address-bar"> {{ t('Programming') }} | {{ t('World Today') }} | {{ t('Fun') }} | {{ t('Personal') }} </div>
+    {{ PjaxBegin() }}
+    <!-- NAVBAR/MENU -->
+    {% include 'navbar.twig' %}
+
+    <!-- BREADCRUMBS -->
+    <div id="breadcrumbs" class="row"> {{ Breadcrumbs({ 'links': this.params['breadcrumbs'] }) | raw }} </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="container-fluid" >
+    <!-- RENDERED VIEW FILE -->
+        <div  class="indexWrap"> {{ content | raw }} </div>
+    <!-- SLIDE OUT PANELS (Language/Search/Login)-->
+        {% include 'side.twig' %}
     </div>
-    <div class="address-bar">{{ t('Programming') }} | {{ t('World Today') }} | {{ t('Fun') }} | {{ t('Personal') }}</div>
-</div>
-
-    {{ nav_bar_begin({
-        'brandLabel': '<div class="dovieBrand">
-            <img  src="' ~ app.view.theme.baseUrl ~ '/img/redhand.svg"><span> Dovie\' andi se tovya sagain</span>
-            </div>',
-        'brandUrl': app.homeUrl,
-        'brandOptions': {'style': 'display: block;'},
-        'options': { 'class': 'navbar-default' },
-        'renderInnerContainer': true,
-    }) }}
-
-    <!-- everyone can see Home page -->
-    {% set menuItems = [{'label': t('Home'), 'url': ['/site/index']}] %}
-
-    <!-- we do not need to display Article/index, About and Contact pages to editor+ roles -->
-    {% if not app.user.can('editor') %}
-        {% set menuItems = menuItems|merge([{ 'label': t('Articles'), 'url': ['/article/index'] }]) %}
-        {% set menuItems = menuItems|merge([{ 'label': t('About'), 'url': ['/site/about'] }]) %}
-        {% set menuItems = menuItems|merge([{ 'label': t('Contact'), 'url': ['/site/contact'] }]) %}
-    {% elseif app.user.can('editor') %}
-        {% set menuItems = menuItems|merge([{ 'label': t('Articles'), 'url': ['/article/admin'] }]) %}
-    {% endif %}
-
-    {% if app.user.isGuest == false %}
-        {% set menuItems = menuItems|merge([
-            {'label': 'About', 'url': ['/site/about']},
-            {
-                'label': t('logout') ~ '(' ~ app.user.identity.username ~ ')',
-                'url': ['/site/logout'],
-                'linkOptions': {'data-method': 'post'}
-            }
-        ])
-    %}
-    {% else %}
-        {% set menuItems = menuItems|merge([
-            {'label': t('Login'), 'url': ['/site/login']},
-            {'label': t('Sign up'), 'url': ['/site/signup']},
-        ])
-    %}
-
-    {% endif %}
-    {{ nav_widget({
-        'options': { 'class': 'navbar-nav navbar' },
-        'items': menuItems
-    }) | raw }}
-
-    {{ nav_bar_end() }}
-<div class="container-fluid" >
-    <div id="breadcrumbs" class="row">
-        {{ Breadcrumbs({ 'links': this.params['breadcrumbs'] }) | raw }}
-    </div>
-<!-- MAIN CONTENT -->
-    <div  class="indexWrap">
-        {{ content | raw }}
-    </div>
-<!-- right side slide out panels-->
-    {% include 'side.twig' %}
-
-    </div>
-</div>
-<!-- FOOTER -->
-    {% include 'footer.twig' %}
+    {{ PjaxEnd() }}
+    <!-- FOOTER -->
+    {% include 'layouts/footer.twig' %}
 
 {{   void(this.endBody()) }}
 </body>
