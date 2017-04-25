@@ -59,19 +59,19 @@ class FrontendController extends Controller
                 'rules' => [
                     [
                         'controllers' => ['article'],
-                        'actions' => ['index', 'view', 'create', 'update', 'delete', 'admin'],
+                        'actions' => ['index', 'view', 'create', 'update', 'delete', 'admin','category','search'],
                         'allow' => true,
                         'roles' => ['admin'],
                     ],
                     [
                         'controllers' => ['article'],
-                        'actions' => ['create', 'update', 'admin'],
+                        'actions' => ['create', 'update', 'admin','category','search'],
                         'allow' => true,
                         'roles' => ['editor'],
                     ],
                     [
                         'controllers' => ['article'],
-                        'actions' => ['index', 'view','category'],
+                        'actions' => ['index', 'view','category','search'],
                         'allow' => true
                     ],
                     [

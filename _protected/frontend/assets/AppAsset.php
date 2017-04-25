@@ -32,7 +32,8 @@ class AppAsset extends AssetBundle
         'css/flag-icon.min.css',
         'css/site.css',
         'css/box.css',
-        'css/sidemenu.css'
+        'css/sidemenu.css',
+        'css/media.css'
     ];
     public $js = [
         'js/theme.js',

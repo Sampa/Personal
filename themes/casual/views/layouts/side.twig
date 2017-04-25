@@ -17,14 +17,21 @@
            <span class="glyphicon glyphicon-search"></span>
         </a>
         <div class="sidebox shadow6" style="padding: 15px 5px;">
-            <form class="form" role="search">
-                <div class="form-group col-xs-9">
-                    <input type="text" class="form-control" id="exampleInputName2" placeholder="{{ t('Search term') }}">
-                </div>
-                <button type="submit" class="btn btn-default" style="">
-                    <span class="glyphicon glyphicon-search"></span>
-                </button>
-            </form>
+            {{ use('yii/widgets/ActiveForm') }}
+            {% set form = active_form_begin({
+                'id': 'ArticleSearch',
+                'method': 'get',
+                'action': '/search',
+                'options' : {'class' : 'form-horizontal', 'role': 'search'},
+            }) %}
+            <div class="col-xs-9">
+                <input type="text" id="articlesearch-title" class="form-control" name="ArticleSearch[title]" value="aeia" placeholder="Search term">
+            </div>
+            {{ html('submitButton',[
+                '<span class="glyphicon glyphicon-search"></span>',
+                {'class': 'btn btn-default'}
+                ]) | raw }}
+            {{ active_form_end() }}
         </div>
     </div>
 

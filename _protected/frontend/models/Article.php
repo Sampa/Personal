@@ -235,6 +235,7 @@ class Article extends ActiveRecord
 
         return $statusArray;
     }
+
     /**
      * Returns an array of the categories in with links
      * @param $array an array of the available categories
@@ -247,10 +248,11 @@ class Article extends ActiveRecord
             $array = $model->getCategoryList();
         }
         $itemsArr = [];
+        $category = isset(Yii::$app->request->queryParams['category']) ? Yii::$app->request->queryParams['category'] : null;
         if($type='li') {
             foreach ($array as $db => $text) {
                 $liOptions = $options;
-                if($text == Yii::$app->request->queryParams['category']){
+                if($text == $category){
                    if(isset($linkOptions['class'])) {
                        $liOptions['class'] = $liOptions['class'] . ' active';
                    } else {

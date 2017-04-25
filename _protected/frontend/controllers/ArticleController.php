@@ -12,6 +12,7 @@ use common\helpers\My;
  */
 class ArticleController extends FrontendController
 {
+    const PAGE_SIZE = 4;
     /**
      * Lists all Article models.
      *
@@ -24,7 +25,7 @@ class ArticleController extends FrontendController
          * How many articles we want to display per page.
          * @var integer
          */
-        $pageSize = 4;
+        $pageSize = self::PAGE_SIZE;
 
         /**
          * Articles have to be published.
@@ -35,19 +36,40 @@ class ArticleController extends FrontendController
         $params = Yii::$app->request->queryParams;
         if(isset(Yii::$app->request->queryParams['category'])){
             $category =  Yii::$app->request->queryParams['category'];
-            if( is_string($category) ) {
-                $category = Article::getCategoryId($category);
-                $dataProvider = $searchModel->search($params, $pageSize, $published,$category);
-            }
-        } else {
-            $dataProvider = $searchModel->search($params, $pageSize, $published);
+            $params['ArticleSearch']['category'] = Article::getCategoryId($category);
         }
+        $dataProvider = $searchModel->search($params, $pageSize, $published);
+
         return $this->render('index.twig', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
     }
 
+    /** Search page **/
+
+    public function actionSearch(){
+        /**
+         * How many articles we want to display per page.
+         * @var integer
+         */
+
+        $pageSize = self::PAGE_SIZE;
+        /**
+         * Articles have to be published.
+         * @var boolean
+         */
+        $published = true;
+        $searchModel = new ArticleSearch();
+        $params = Yii::$app->request->queryParams;
+        $dataProvider = $searchModel->search($params, $pageSize, $published);
+
+        return $this->render('search.twig',[
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+            'model' => new Article()
+        ]);
+    }
 
     /**
      * Displays a single Article model.
@@ -119,6 +141,8 @@ class ArticleController extends FrontendController
             throw new MethodNotAllowedHttpException(Yii::t('app', 'You are not allowed to access this page.'));
         } 
     }
+
+
 
     /**
      * Deletes an existing Article model.

@@ -36,6 +36,7 @@ return [
             'showScriptName' => false,
             'rules'=>[
                 '<alias:articles>' => 'article/index',
+                '<alias:search>' => 'article/search',
                 '<alias:about|contact|login|signup|logout>' => 'site/<alias>',
                 '<controller:\w+>/<id:\d+>/<title:\w+>' => '<controller>/view',
                 'articles/<category:\w+>' => 'article/index',

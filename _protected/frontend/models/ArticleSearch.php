@@ -43,10 +43,9 @@ class ArticleSearch extends Article
      *
      * @return ActiveDataProvider
      */
-    public function search( $params, $pageSize = 3, $published = false,$category=null)
+    public function search( $params, $pageSize = 3, $published = false)
     {
         $query = Article::find()->joinWith(['user']);
-
 
         // this means that editor is trying to see articles
         // we will allow him to see published ones and drafts made by him
@@ -63,10 +62,6 @@ class ArticleSearch extends Article
                 'pageSize' => $pageSize,
             ]
         ]);
-
-        if(isset($category)){
-            $query->andFilterWhere(['category' => $category]);
-        }
 
         if (!($this->load($params) && $this->validate())) {
             return $dataProvider;

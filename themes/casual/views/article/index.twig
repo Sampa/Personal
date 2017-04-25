@@ -19,11 +19,11 @@
 <div class="col-xs-12" style="">
 
     {{ ListViewWidget({
-                'summary': false,
-                'dataProvider':dataProvider,
-                'emptyText': html('tag',['div',t('We haven\'t created any articles yet.'),{'class': 'box'}]),
-                'itemOptions': {'class': 'item'},
-                'itemView': '_index.twig'
-            }) | raw }}
+        'summary': false,
+        'dataProvider':dataProvider,
+        'emptyText': html('tag',['div',t('We haven\'t created any articles yet.'),{'class': 'box'}]),
+        'itemOptions': {'class': 'item'},
+        'itemView': '_index.twig'
+    }) | raw }}
 
 </div>

@@ -1,0 +1,82 @@
+{{ use('yii.helpers.Html') }}
+{{ use('yii.widgets.ActiveForm') }}
+{{ use('frontend.models.Article') }}
+
+{#
+@var searchModel ArticleSearch object
+@var dataProvider SearchResults Article objects
+#}
+
+{{ set(this, 'title', t('Search')) }}
+
+<section class="col-xs-12 box" style="">
+    <hr>
+    <h2 class="intro-text text-center">Searchresult</h2>
+    <hr>
+    <div class="row">
+        <div class="col-sm-1 col-sm-push-5">
+            <button class="oldRedText btn btn-default"> {{ t('Search') }} <span class="glyphicon glyphicon-menu-down"></span> </button>
+        </div>
+    </div>
+
+    <div class="row sidebox shadow6 hidden" style="padding: 5px 5px;">
+
+        {% set form = active_form_begin({
+            'id': 'ArticleSearch',
+            'method': 'get',
+            'action': '/search',
+            'options' : {'class' : 'form-horizontal', 'role': 'search'},
+        }) %}
+
+        {# FIELDS #}
+        <div class="col-sm-6">
+            {{ form.field(searchModel, 'title').textInput({ 'placeholder': t('Search term') }) | raw }}
+        </div>
+
+        <div class="col-sm-2 ">
+            {{ form.field(searchModel, 'user_id').textInput({ 'placeholder': t('Search term') }) | raw }}
+        </div>
+
+        <div class="col-sm-2 ">
+            {{ form.field(searchModel, 'category').dropDownList(model.categoryList) | raw }}
+        </div>
+
+        <div class="col-sm-2">
+            {# 2 = Published as rendered in the html-source tag as value, we set it as the selected option#}
+            {{ form.field(searchModel, 'status').dropDownList(
+                model.statusList,
+                {
+                    'options':{
+                        2: {'selected': true}
+                    }
+                }
+            ) | raw }}
+        </div>
+
+        <div class="col-sm-6">
+            {{ form.field(searchModel, 'summary').textArea({ 'placeholder': t('Search term') }) | raw }}
+        </div>
+
+        <div class="col-sm-6">
+            {{ form.field(searchModel, 'content').textArea({ 'placeholder': t('Search term') }) | raw }}
+        </div>
+
+        {# SUBMIT #}
+        {{ html('submitButton',[
+            t('Search articles') ~ ' <span class="glyphicon glyphicon-search"></span>',
+            {'class': 'btn btn-default'}
+        ]) | raw }}
+        {{ active_form_end() }}
+    </div>
+
+    <div class="row">
+        {{ ListViewWidget({
+            'summary': false,
+            'dataProvider':dataProvider,
+            'emptyText': html('tag',['div',t('We haven\'t created any articles yet.'),{'class': 'box'}]),
+            'itemOptions': {'class': 'item'},
+            'itemView': '_index.twig'
+        }) | raw }}
+    </div>
+
+</section>
