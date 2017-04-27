@@ -10,16 +10,15 @@
 {{ set(this, 'title', t('Search')) }}
 
 <section class="col-xs-12 box" style="">
-    <hr>
-    <h2 class="intro-text text-center">Searchresult</h2>
+    <h1 class="text-center">{{  t('Searchresult') }}</h1>
     <hr>
     <div class="row">
         <div class="col-sm-1 col-sm-push-5">
-            <button class="oldRedText btn btn-default"> {{ t('Search') }} <span class="glyphicon glyphicon-menu-down"></span> </button>
+            <button id="toggleSearchForm" class="oldRedText btn btn-default"> {{ t('Advanced search') }} <span class="glyphicon glyphicon-menu-down"></span> </button>
         </div>
     </div>
 
-    <div class="row sidebox shadow6 hidden" style="padding: 5px 5px;">
+    <div id="searchPageForm" class="row">
 
         {% set form = active_form_begin({
             'id': 'ArticleSearch',
@@ -68,7 +67,7 @@
         ]) | raw }}
         {{ active_form_end() }}
     </div>
-
+</section>
     <div class="row">
         {{ ListViewWidget({
             'summary': false,
@@ -79,4 +78,4 @@
         }) | raw }}
     </div>
 
-</section>
+

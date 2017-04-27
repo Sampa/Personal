@@ -8,12 +8,16 @@
 
 {{ set(this, 'title', t(app.name) ~' '~ t('News')) }}
 {#{{ set(this, 'params', {'breadcrumbs': [t('Articles')]}) }}#}
-
-<div class="col-xs-12 col-xs-push-2 col-sm-push-4 col-lg-push-0 categories-nav">
-    <ul class="nav nav-pills ">
-        {% for li in ArticleCategoryListItems(null,'li',{'role': 'presentation'},{'style': 'color: rgb(165,0,0)'}) %}
+<div id="secondNav" class="row" style="">
+    <ul class="secondNav" style="">
+        {% for li in ArticleCategoryListItems(null,'li',{'role': 'presentation'},{}) %}
             {{ li | raw }}
         {% endfor %}
+    </ul>
+</div>
+<div class="col-xs-12 col-xs-push-2 col-sm-push-4 col-lg-push-0 categories-nav">
+    <ul class="nav nav-pills ">
+
     </ul>
 </div>
 <div class="col-xs-12" style="">

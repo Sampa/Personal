@@ -83,6 +83,29 @@ footer p { margin: 0; padding: 50px 0;}
     margin-top: 20px;
 }
 
+#secondNav{
+    position:relative;
+    top: -20px;
+    background: rgba(165, 0, 0, 0.56);
+}
+#secondNav ul{
+    text-align: center;
+    width: 100%;
+    border: 0px solid rgba(165, 0, 0, 1);
+    border-radius: 4px;
+    display: block;
+    padding: 0px 15px ;
+    margin: 0 auto;
+}
+#secondNav ul li{display: inline;}
+#secondNav ul li a {padding:2px 5px;color: rgba(255, 255, 255, 1); }
+#secondNav ul .active a, #secondNav ul li a:hover {
+    border-radius: 5px;
+    background: rgba(204, 204, 204, 0.5);
+    color: rgba(35, 82, 124,1);
+}
+#secondNav ul li a,#secondNav ul .active a,#secondNav ul .active {font-weight: bold;}
+
 /**
  * LANGUAGE SELECTING
 **/
@@ -382,3 +405,8 @@ aside{
     z-index: 2;
     position: relative;
 }
+
+/**
+ * //frontend/themes/casual/views/article/search.twig
+**/
+#searchPageForm{display:none; padding: 5px 5px;}

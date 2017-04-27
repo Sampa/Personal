@@ -1,7 +1,34 @@
 $(document).ready(function()
 {
+    /**
+     * toggles between classes on an jquery object
+     * @param element the jquery object
+     * @param start the class it has from the start
+     * @param other the class to toggle to
+     */
+    function toggleClass(element,start,other){
+        if(element.hasClass(start)){
+            element.removeClass(start).addClass(other);
+        } else {
+            element.removeClass(other).addClass(start);
+        }
+    }
 
     /**
+     * Search PAGE /frontend/themes/casual/views/arcticle/search.twig
+     *
+     */
+    $("#toggleSearchForm").on('click',function(){
+        $("#searchPageForm").slideToggle();
+        toggleClass($(this).children("span"), "glyphicon-menu-down", "glyphicon-menu-up");
+    });
+
+
+    /*--------------*/
+
+
+    /**
+     * PAGE /frontend/themes/casual/views/layouts/main.twig
      * right side slide out menu, initialize the plugin https://github.com/hawk-ip/jquery.tabSlideOut.js
      */
     $('#slide-out-login').tabSlideOut({

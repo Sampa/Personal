@@ -7,7 +7,7 @@
 {{ set(this, 'params', {
     'breadcrumbs': [
         {'label': t('Articles'), 'url': ['index']},
-        {'label': t(model.getCategoryName()), 'url': ['articles/category/'~model.getCategoryName()]},
+        {'label': t(model.getCategoryName()), 'url': ['articles/'~model.getCategoryName()]},
         {'label': this.title}
         ]
     }) }}
