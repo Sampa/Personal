@@ -15,6 +15,7 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use Yii;
+use triawarman\richFilemanager\FileManagerAction;
 
 /**
  * Site controller.
@@ -28,6 +29,11 @@ class SiteController extends FrontendController
      *
      * @return array
      */
+    public function beforeAction($action) {
+        $this->enableCsrfValidation = false;
+        return parent::beforeAction($action);
+    }
+
 
     public function behaviors()
     {
@@ -72,6 +78,16 @@ class SiteController extends FrontendController
                 'class' => 'yii\captcha\CaptchaAction',
                 'fixedVerifyCode' => YII_ENV_TEST ? 'testme' : null,
             ],
+//            'file-manager'=>[
+//                'class' => FileManagerAction::className(),
+//                'auth' => true, //INFO: Default true
+//                'serverConfig' => [
+//                    'options' =>[
+//                        "serverRoot" => true,
+//                        "fileRoot" => "/user_folder/"
+//                    ]
+//                ],
+//            ]
         ];
     }
 

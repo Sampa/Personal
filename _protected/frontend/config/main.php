@@ -13,6 +13,7 @@ return [
     'bootstrap' => ['log'],
     'language' => 'en',
     'controllerNamespace' => 'frontend\controllers',
+
     'components' => [
         // here you can set theme used for your frontend application 
         // - template comes with: 'default', 'slate', 'spacelab' and 'cerulean'
@@ -47,8 +48,12 @@ return [
                         'LanguageSelector' => 'frontend\widgets\LanguageSelector::Widget',
                         'CaptchaClassName' => '\yii\captcha\Captcha::className',
                         'HtmlCsrfMetaTags' => '\yii\helpers\Html::csrfMetaTags',
+                       // 'SerialColumn' => '\yii\grid\SerialColumn::className',
                         'ArticleCategoryListItems' => 'frontend\models\Article::getCategoryListItems',
                         'CssHelperArticleCategoryCss' => '\common\helpers\CssHelper::articleCategoryCss',
+                        new \Twig_SimpleFunction('SerialColumn',function(){
+                           return \yii\grid\SerialColumn::className();
+                        }),
                         new \Twig_SimpleFunction('urlto', function($url,$options) {
                             return Url::to(array_merge($url,$options));
                         }),
@@ -65,13 +70,35 @@ return [
                             return \yii\widgets\Breadcrumbs::widget($options);
                         }),
                         new \Twig_SimpleFunction('PjaxBegin', function(){
-                             \yii\widgets\Pjax::begin();
+                            \yii\widgets\Pjax::begin();
                         }),
                         new \Twig_SimpleFunction('PjaxEnd', function(){
-                             \yii\widgets\Pjax::end();
-                        })
-
-
+                            \yii\widgets\Pjax::end();
+                        }),
+                        new \Twig_SimpleFunction('AttachmentsTableWidget', function($model,$files='all'){
+                            return \sampa\media\components\AttachmentsTable::widget(['model' => $model,'files'=>$files]);
+                        }),
+                        new \Twig_SimpleFunction('TextFilesTableWidget', function($model){
+                            return \sampa\media\components\TextFilesTable::widget(['model' => $model]);
+                        }),
+                        new \Twig_SimpleFunction('AttachmentsInputWidget', function($model,$options=[]){
+                            $options = [
+                                'id' => 'file-input', // Optional
+                                'model' => $model,
+                                'options' => [ // Options of the Kartik's FileInput widget
+                                    'multiple' => true, // If you want to allow multiple upload, default to false
+                                    'theme' => 'explorer'
+                                ],
+                                'pluginOptions' => [ // Plugin options of the Kartik's FileInput widget
+                                    'theme' => 'explorer',
+                                    'maxFileCount' => 10 // Client max files
+                                ]
+                            ];
+                            return \sampa\media\components\AttachmentsInput::widget($options);
+                        }),
+                        new \Twig_SimpleFunction('GalleryWidget', function($items){
+                            return dosamigos\gallery\Gallery::widget(['items' => $items]);
+                        }),
                     ]
                 ],
                 // ...

@@ -6,6 +6,7 @@ use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
 use Yii;
 use yii\helpers\Html;
+use common\helpers\Media;
 
 /**
  * This is the model class for table "{{%article}}".
@@ -33,17 +34,36 @@ class Article extends ActiveRecord
     const CATEGORY_SOCIETY = 2;
     const CATEGORY_SPORT = 3;
     const CATEGORY_URL = "/articles/";
-
+    public $image;
+    public $attachments;
     public function init(){
        parent::init();
-       $this->on(self::EVENT_AFTER_FIND,[$this,'setCustomProps']);
+        $this->on(self::EVENT_AFTER_FIND,[$this,'setCustomProps']);
     }
-    public function setCustomProps(){
 
+    public function setCustomProps()
+    {
         $this->author = $this->getAuthorName();
         $this->_status = $this->getStatusName();
         $this->_category = $this->getCategoryName();
-
+        $files = Media::getFilesInfo($this);
+        if (sizeof($files) > 0) {
+//            $attachments = null;
+//            if(is_array($files)){
+//                if(isset($files['image'])){
+//                    $attachments = $this->attachments['image'];
+//                }
+//                if(isset($files['text'])){
+//                    $attachments = array_merge($attachments, $this->attachments['text']);
+//                }
+//                if(isset($files['pdf'])){
+//                    $attachments = array_merge($attachments, $this->attachments['pdf']);
+//                }
+//            }
+            $this->attachments = $files;//all attachment and their fileinfo
+        }else{
+            $this->attachments = 0;
+        }
     }
 
     /**
@@ -66,7 +86,7 @@ class Article extends ActiveRecord
         return [
             [['user_id', 'title', 'summary', 'content', 'status'], 'required'],
             [['user_id', 'status', 'category'], 'integer'],
-            [['summary', 'content'], 'string'],
+            [['summary', 'content','attachments'], 'string'],
             [['title'], 'string', 'max' => 255]
         ];
     }
@@ -80,6 +100,10 @@ class Article extends ActiveRecord
     {
         return [
             TimestampBehavior::className(),
+            'fileBehavior' => [
+                'class' => \sampa\media\behaviors\FileBehavior::className(),
+
+            ]
         ];
     }
 
@@ -101,6 +125,7 @@ class Article extends ActiveRecord
             'category' => Yii::t('app', 'Category'),
             'created_at' => Yii::t('app', 'Created At'),
             'updated_at' => Yii::t('app', 'Updated At'),
+            'attachments' => Yii::t('app', 'Attachments')
         ];
     }
 

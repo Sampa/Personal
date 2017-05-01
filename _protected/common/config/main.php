@@ -3,7 +3,42 @@ return [
     'name' => 'Sampa',
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
     'language' => 'en',
+    'modules' => [
+        'roxymce' => [
+            'class' => 'navatech\roxymce\Module',
+            'uploadFolder' => 'uploads',
+            'uploadUrl'  => 'uploads'
+        ],
+        'media' => [
+            'class' => sampa\media\Module::className(),
+            'tempPath' => 'uploads/temp',
+            'storePath' => 'uploads/store',
+            'rules' => [ // Rules according to the FileValidator
+                'maxFiles' => 10, // Allow to upload maximum 3 files, default to 3
+//                'mimeTypes' => 'image/png, image/jpeg', // Only png images
+                'maxSize' => 1024 * 1024 // 1 MB
+            ],
+            'tableName' => '{{%attachments}}', // Optional, default to 'attach_file'
+            'controllerMap' => [
+                'migrate' => [
+                    'class' => 'yii\console\controllers\MigrateController',
+                    'migrationNamespaces' => [
+                        'sampa\attachments\migrations',
+                    ],
+                ],
+            ],
+        ],
+        'controllerMap' => [
+            'migrate' => [
+                'class' => 'yii\console\controllers\MigrateController',
+                'migrationNamespaces' => [
+                    'nemmo\attachments\migrations',
+                ],
+            ],
+        ],
+    ],
     'components' => [
+
         'assetManager' => [
             'bundles' => [
                 // we will use bootstrap css from our theme
@@ -39,6 +74,8 @@ return [
                 '<alias:search>' => 'article/search',
                 '<alias:about|contact|login|signup|logout>' => 'site/<alias>',
                 '<controller:\w+>/<id:\d+>/<title:\w+>' => '<controller>/view',
+                'media/upload/<type:\w+>' =>'media/upload',
+//                'media/upload/<type:\w+>/<class:\w+>/<id:\d+>' =>'media/upload',
                 'articles/<category:\w+>' => 'article/index',
                 'artiklar/<category:\w+>' => 'article/index'
 
@@ -74,6 +111,7 @@ return [
     // set allias for our uploads folder so it can be shared by both frontend and backend applications
     // @appRoot alias is definded in common/config/bootstrap.php file
     'aliases' => [
-        '@uploads' => '@appRoot/uploads'
+        '@uploads' => 'uploads',
+//        '@bower' =>   '_protected/bower'
     ],
 ];

@@ -1,18 +1,21 @@
 <?php
 namespace frontend\controllers;
 
-use frontend\models\Article;
-use frontend\models\ArticleSearch;
+use Yii;
+use yii\helpers\FileHelper;
+use yii\data\ArrayDataProvider;
 use yii\web\NotFoundHttpException;
 use yii\web\MethodNotAllowedHttpException;
-use Yii;
-use common\helpers\My;
+use frontend\models\Article;
+use frontend\models\ArticleSearch;
+use common\helpers\Media;
 /**
  * ArticleController implements the CRUD actions for Article model.
  */
 class ArticleController extends FrontendController
 {
-    const PAGE_SIZE = 4;
+    const PAGE_SIZE = 6;
+    private $uploadDir = "@uploads/article";
     /**
      * Lists all Article models.
      *
@@ -41,6 +44,7 @@ class ArticleController extends FrontendController
         $dataProvider = $searchModel->search($params, $pageSize, $published);
 
         return $this->render('index.twig', [
+
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
@@ -79,8 +83,12 @@ class ArticleController extends FrontendController
      */
     public function actionView($id,$title="")
     {
+        $model = $this->findModel($id);
+        $directory = Yii::getAlias($this->uploadDir. DIRECTORY_SEPARATOR) . $model->id; //where we want to save the file
         return $this->render('view.twig', [
-            'model' => $this->findModel($id),
+            'model' => $model,
+            'attachments' => $model->attachments,
+            'dir' => $directory,
         ]);
     }
 
@@ -97,19 +105,22 @@ class ArticleController extends FrontendController
         $model = new Article();
 
         $model->user_id = Yii::$app->user->id;
-
-        if ($model->load(Yii::$app->request->post()) && $model->save()) 
+        if ($model->load(Yii::$app->request->post() ))
         {
-            return $this->redirect(['view', 'id' => $model->id]);
-        } 
-        else 
-        {
-            return $this->render('create', [
-                'model' => $model,
-            ]);
+            if($model->save()) {
+                return $this->redirect(['view', 'id' => $model->id]);
+            }
         }
+        return $this->render('create.twig', [
+            'model' => $model,
+        ]);
     }
-
+    public function createPath($path) {
+        if (is_dir($path)) return true;
+        $prev_path = substr($path, 0, strrpos($path, '/', -2) + 1 );
+        $return = createPath($prev_path);
+        return ($return && is_writable($prev_path)) ? mkdir($path) : false;
+    }
     /**
      * Updates an existing Article model.
      * If update is successful, the browser will be redirected to the 'view' page.

@@ -1,6 +1,15 @@
 $(document).ready(function()
 {
     /**
+     * Makes sure our logout link uses POST as method so that the logout method permits logout of user
+     */
+    $("#sideLogout").on("click",function(e) {
+        e.preventDefault(); // cancel the link itself
+        $.post(this.href,function(data) {
+            //$($(this).parent).html(data);
+        });
+    });
+    /**
      * toggles between classes on an jquery object
      * @param element the jquery object
      * @param start the class it has from the start

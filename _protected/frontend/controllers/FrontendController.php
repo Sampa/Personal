@@ -75,7 +75,9 @@ class FrontendController extends Controller
                         'allow' => true
                     ],
                     [
-                        // other rules
+                        'controllers' => ['media'],
+                        'actions' => ['upload','image-delete','file-manager'],
+                        'allow' => true
                     ],
 
                 ], // rules

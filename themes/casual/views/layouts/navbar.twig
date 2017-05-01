@@ -11,7 +11,11 @@
 }) }}
 
 <!-- everyone can see Home page -->
-{% set menuItems = [{'label': t('Home'), 'url': [app.homeUrl]}] %}
+{% set menuItems = [
+    {'label': t('Home'), 'url': [app.homeUrl]},
+    {'label': 'About', 'url': ['/about']},
+    {'label': t('Contact'), 'url': ['/contact'] }
+] %}
 
 <!-- we do not need to display Article/index, About and Contact pages to editor+ roles -->
 {% if not app.user.can('editor') %}
@@ -21,8 +25,6 @@
             'url': '/articles',
         }
     ]) %}
-    {% set menuItems = menuItems|merge([{ 'label': t('About'), 'url': ['/about'] }]) %}
-    {% set menuItems = menuItems|merge([{ 'label': t('Contact'), 'url': ['/contact'] }]) %}
 
 {% elseif app.user.can('editor') %}
     {% set menuItems = menuItems|merge([
@@ -32,6 +34,7 @@
         'items': [
             { 'label': t('All'), 'url': ['/articles'] },
             { 'label': t('Admin'), 'url': ['/article/admin'] },
+            { 'label': t('Create'), 'url': ['/article/create'] },
             { 'label': t('Sport'), 'url': ['/articles/'~t('Sport')] },
             { 'label': t('Economy'), 'url': ['/articles/'~t('Economy')] },
             { 'label': t('Society'), 'url': ['/articles/'~t('Society')] }
@@ -39,26 +42,6 @@
     }]) %}
 {% endif %}
 
-    {% if app.user.isGuest == false %}
-        {% set menuItems = menuItems|merge([
-        {'label': 'About', 'url': ['/about']},
-        {
-        'label': t('logout') ~ '(' ~ app.user.identity.username ~ ')',
-        'url': ['/logout'],
-        'linkOptions': {'data-method': 'post'}
-        }
-        ])
-        %}
-    {% else %}
-        {#
-        {% set menuItems = menuItems|merge([
-            {'label': t('Login'), 'url': ['/site/login']},
-            {'label': t('Sign up'), 'url': ['/site/signup']},
-        ])
-        %}
-        #}
-
-    {% endif %}
     {{ nav_widget({
         'options': { 'class': 'navbar-nav navbar' },
         'items': menuItems

@@ -1,15 +1,18 @@
 <div id="slide-out-wrapper">
-{% if app.user.isGuest %}
 <!-- SLIDE OUT LOGIN/SIGNUP -->
-    <div id="slide-out-login" >
+        <div id="slide-out-login" >
         <a id="slide-out-login-handler" class="btn btn-default" href="#" role="button" >
             <span class="glyphicon glyphicon-user"></span>
         </a>
-        <div class="sidebox shadow6" style="width:400px;padding: 0px 5px;">
+            {% if app.user.isGuest %} {# We display the login form for guests#}
+            <div class="sidebox shadow6" style="width:400px;padding: 0px 5px;">
             {{ this.render('/site/login.twig',{'model': loginForm, 'inMainLayout':true}) | raw }}
+            </div>
+            {% else %} <!-- USER TOOLS FOR LOGGED IN USERS-->
+                <!-- this link makes POST , js in theme.js -->
+                {{ html('a', [t('Logout') ~ '(' ~ app.user.identity.username ~ ')', ['/logout'], {'id': 'sideLogout'}]) | raw }}
+            {% endif %}
         </div>
-    </div>
-{% endif %}
 
 <!-- SLIDE OUT SEARCH BOX -->
     <div id="slide-out-search" >
