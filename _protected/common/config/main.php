@@ -4,11 +4,6 @@ return [
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
     'language' => 'en',
     'modules' => [
-        'roxymce' => [
-            'class' => 'navatech\roxymce\Module',
-            'uploadFolder' => 'uploads',
-            'uploadUrl'  => 'uploads'
-        ],
         'media' => [
             'class' => sampa\media\Module::className(),
             'tempPath' => 'uploads/temp',
@@ -32,7 +27,7 @@ return [
             'migrate' => [
                 'class' => 'yii\console\controllers\MigrateController',
                 'migrationNamespaces' => [
-                    'nemmo\attachments\migrations',
+                    'sampa\attachments\migrations',
                 ],
             ],
         ],
@@ -112,6 +107,5 @@ return [
     // @appRoot alias is definded in common/config/bootstrap.php file
     'aliases' => [
         '@uploads' => 'uploads',
-//        '@bower' =>   '_protected/bower'
     ],
 ];

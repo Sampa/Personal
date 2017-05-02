@@ -26,21 +26,25 @@ class AppAsset extends AssetBundle
 {
     public $basePath = '@webroot';
     public $baseUrl = '@themes';
-    
+
     public $css = [
-        'css/bootstrap.css',
-        'css/flag-icon.min.css',
+        //theme
         'css/site.css',
-        'css/box.css',
-        'css/sidemenu.css',
-        'css/media.css'
+        'css/bootstrap.css',
+        //other
+        '../../css/flag-icon.min.css',
+        '../../css/box.css',
+        '../../css/sidemenu.css',
+//        '../../css/media.css'
     ];
     public $js = [
-        'js/theme.js',
-        'js/sidemenu.js',
+        //theme
+        '../../js/theme.js',
+        '../../js/sidemenu.js',
+        //other
 //        'js/bootstrap.js'
     ];
-    
+
     public $depends = [
         'yii\web\YiiAsset',
     ];

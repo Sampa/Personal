@@ -136,9 +136,13 @@ class ArticleController extends FrontendController
 
         if (Yii::$app->user->can('updateArticle', ['model' => $model])) 
         {
-            if ($model->load(Yii::$app->request->post()) && $model->save()) 
+            if ($model->load(Yii::$app->request->post()))
             {
-                return $this->redirect(['view', 'id' => $model->id]);
+                if($model->save()) {
+                    return $this->redirect(['view', 'id' => $model->id]);
+                }else{
+                    print_r($model->getErrors());
+                }
             } 
             else 
             {

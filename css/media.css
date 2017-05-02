@@ -1,0 +1,114 @@
+/* SMALL SCREENS */
+@media screen and (max-width: 768px){
+    .categories-nav{
+        margin-top: -30px;
+    }
+    .categories-nav>ul>li>a{
+        /*padding: 3px;*/
+    }
+}
+
+/* BIG SCREENS */
+@media screen and (min-width: 768px){
+    .redhand img{
+        height: 90px;
+        width: auto;
+    }
+    .redhand{
+        z-index: 999;
+        display: block;
+        margin: 0;
+        padding: 0;
+        /*position: absolute;*/
+        float: left;
+        position: relative;
+        font-family: 'UnifrakturCook', cursive;
+        color: rgb(165,0,0);
+        font-size: 18px;
+
+    }
+    .brand {
+        display: inherit;
+        margin: 0;
+        padding: 0px 0 20px;
+        text-align: center;
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        font-family: 'UnifrakturCook', cursive;
+        font-size: 5em;
+        font-weight: 700;
+        line-height: normal;
+        color: rgb(165,0,0);
+    }
+
+    .top-divider {
+        margin-top: 0;
+    }
+
+    .img-left {
+        float: left;
+        margin-right: 25px;
+    }
+
+    .address-bar {
+        display: inherit;
+        margin-top: -15px;
+        padding: 0 0 30px;
+        text-align: center;
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        text-transform: uppercase;
+        font-size: 1.25em;
+        font-weight: 400;
+        letter-spacing: 3px;
+        color: #fff;
+        /*color: rgb(165,0,0);*/
+    }
+
+    .navbar {
+        border-radius: 0;
+    }
+
+    .navbar-header {
+        display: none;
+    }
+
+    .navbar {
+        min-height: 0;
+        margin-bottom: 0;
+    }
+
+    .navbar-default {
+        border: none;
+        background: #fff;
+        background: rgba(255,255,255,0.9);
+    }
+
+    .navbar-nav>li>a {
+        padding: 25px;
+        line-height: normal;
+    }
+
+
+    .navbar-nav>li:hover{
+        background-color: #eee;
+    }
+    .navbar-default .navbar-nav > .active > a{
+        background-color: #fff;
+    }
+
+    .navbar-nav {
+        display: table;
+        float: none;
+        margin: 0 auto;
+        table-layout: fixed;
+        font-size: 1.25em;
+    }
+
+}
+
+@media screen and (min-width:1200px) {
+    .box:after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+}

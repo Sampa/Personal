@@ -1,0 +1,52 @@
+
+{{ use(common.helpers.CssHelper) }}
+{{ use(yii.helpers.Html) }}
+{{ use(yii.grid.GridView) }}
+{{ use(yii.grid.ActionColumn) }}
+{#/* @var this yii\web\View */#}
+{#/* @var searchModel app\models\ArticleSearch */#}
+{#/* @var dataProvider yii\data\ActiveDataProvider */#}
+
+{{ set(this, 'title', t('Articles')) }}
+
+<div class="articles-admin">
+
+    <div class="container box">
+        <hr>
+        <h1 class="intro-text text-center">
+        {{ html('encode',[this.title])|raw }}
+        </h1>
+        <hr>
+        <span class="pull-right">
+            {{ html('a',[t('Create Article'), ['create'], {'class': 'btn btn-success'}]) |raw }}
+        </span>
+
+
+        {{ GridViewWidget({
+            'dataProvider': dataProvider,
+            'filterModel': searchModel,
+            'summary': false,
+            'columns': [
+                'id',
+                {'attribute': 'user_id', 'value': 'author', 'headerOptions': {'style': 'width:10%'}},
+                {
+                    'attribute': 'title',
+                    'headerOptions': {'style': 'width:50%'}
+                },
+                {
+                    'attribute': 'status',
+                    'filter': searchModel.getStatusList(),
+                    'value': '_status',
+                    'headerOptions': {'style': 'width:10%'}},
+                {
+                    'attribute': 'category',
+                    'filter': searchModel.getCategoryList(),
+                    'value': '_category',
+                    'headerOptions': {'style': 'width:10%'}
+                },
+                {'class': 'yii\\grid\\ActionColumn', 'header': t('Menu')},
+            ],
+        }) |raw }}
+    </div>
+
+</div>

@@ -35,7 +35,7 @@ class Article extends ActiveRecord
     const CATEGORY_SPORT = 3;
     const CATEGORY_URL = "/articles/";
     public $image;
-    public $attachments;
+    public $attachments = false;
     public function init(){
        parent::init();
         $this->on(self::EVENT_AFTER_FIND,[$this,'setCustomProps']);
@@ -48,21 +48,7 @@ class Article extends ActiveRecord
         $this->_category = $this->getCategoryName();
         $files = Media::getFilesInfo($this);
         if (sizeof($files) > 0) {
-//            $attachments = null;
-//            if(is_array($files)){
-//                if(isset($files['image'])){
-//                    $attachments = $this->attachments['image'];
-//                }
-//                if(isset($files['text'])){
-//                    $attachments = array_merge($attachments, $this->attachments['text']);
-//                }
-//                if(isset($files['pdf'])){
-//                    $attachments = array_merge($attachments, $this->attachments['pdf']);
-//                }
-//            }
-            $this->attachments = $files;//all attachment and their fileinfo
-        }else{
-            $this->attachments = 0;
+            $this->attachments = true;//all attachment and their fileinfo
         }
     }
 
@@ -86,7 +72,8 @@ class Article extends ActiveRecord
         return [
             [['user_id', 'title', 'summary', 'content', 'status'], 'required'],
             [['user_id', 'status', 'category'], 'integer'],
-            [['summary', 'content','attachments'], 'string'],
+            [['summary', 'content'], 'string'],
+            [['attachments'],'safe'],
             [['title'], 'string', 'max' => 255]
         ];
     }
@@ -274,7 +261,7 @@ class Article extends ActiveRecord
         }
         $itemsArr = [];
         $category = isset(Yii::$app->request->queryParams['category']) ? Yii::$app->request->queryParams['category'] : null;
-        if($type='li') {
+        if($type=='li') {
             foreach ($array as $db => $text) {
                 $liOptions = $options;
                 if($text == $category){
@@ -286,11 +273,13 @@ class Article extends ActiveRecord
                 }
                 $itemsArr[] = Html::tag('li', Html::a($text, [self::CATEGORY_URL . $text], $linkOptions), $liOptions);
             }
-        } elseif($type='menu'){
+        }elseif($type=='menu'){
             foreach($array as $db => $text){
                 $itemsArr[] = [ 'label' => $text, 'url' => [self::CATEGORY_URL . $text] ];
             }
+
         }
+
         return $itemsArr;
     }
 }

@@ -1,0 +1,18 @@
+{{ use ('yii.helpers.Html') }}
+
+{# @var $this yii\web\View 
+@var $model frontend\models\Article #}
+
+{{ set(this, 'title', t('Update Article') ~ ': ' ~ model.title) }}
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-lg-8 col-lg-push-2 box bs-component">
+        <h1 class="intro-text text-center">{{ this.title }}</h1>
+
+            {{ this.render('_form', {'model': model})|raw }}
+
+        </div>
+    </div>
+</div>

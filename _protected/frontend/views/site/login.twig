@@ -1,0 +1,48 @@
+{{ use('yii.helpers.Html') }}
+{{ use('yii.bootstrap.ActiveForm') }}
+
+{#/* @var this yii\web\View */#}
+{#/* @var form yii\bootstrap\ActiveForm */#}
+{#/* @var model \common\models\LoginForm */#}
+{# @var inMainLayout boolean if we render from main layout #}
+
+{{ set(this, 'title', t('Login')) }}
+
+<div class="site-login">
+    {# We don't want this in the main layout#}
+    {% if not inMainLayout %}
+    <div class="col-lg-4 col-lg-push-4 box bs-component">
+        <hr>
+        <h3 class="text-center"> {{  this.title }} </h3>
+        <hr>
+    {% else %}
+    <div class="sidebox" >
+    {% endif %}
+        {% set form = active_form_begin({
+            'id' : 'login-form',
+            'action': '/site/login',
+            'options' : {'class' : ''},
+        }) %}
+         {#//-- use email or username field depending on model scenario --// #}
+         {% if model.scenario == 'lwe' %}
+            {{ form.field(model, 'email') | raw }}
+         {% else %}
+            {{ form.field(model, 'username') | raw }}
+        {% endif %}
+        {{ form.field(model, 'password').passwordInput() | raw }}
+        {{ form.field(model, 'rememberMe').checkbox() | raw }}
+
+        <div style="color:#999;margin:1em 0">
+            {{  t('If you forgot your password you can') }}
+            {{ html('a', [t('reset it'), ['site/request-password-reset']]) |raw }}
+        </div>
+
+        <div class="form-group">
+            {{ html('SubmitButton',[t('Login'), {'class': 'btn btn-primary', 'name': 'login-button'}]) | raw }}
+        </div>
+
+         {{ active_form_end() }}
+        Not a member? <a href="/signup">Sign up</a>
+    </div> <!-- //wrapper div with col-4's -->
+
+</div>

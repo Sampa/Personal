@@ -18,11 +18,11 @@
         "mihaildev/yii2-ckeditor": "*",
         "codemix/yii2-localeurls": "*",
         "yiisoft/yii2-twig": "~2.0.0",
-        "2amigos/yii2-file-upload-widget": "~1.0",
-        "sampa/yii2-media": "dev-master"
+        "2amigos/yii2-file-upload-widget": "~1.0"
     },
     "require-dev": {
-        "nemmo/yii2-attachments": "*",
+        "sampa/yii2-media": "*",
+        "sampa/yii2-gallery-widget": "*",
         "codeception/codeception": "*",
         "yiisoft/yii2-debug": "*",
         "yiisoft/yii2-gii": "*",

@@ -28,7 +28,7 @@ use yii\widgets\ActiveForm;
 
     </div>
     </div>
-    <?= \nemmo\attachments\components\AttachmentsInput::widget([
+    <?= \sampa\media\components\AttachmentsInput::widget([
         'id' => 'file-input', // Optional
         'model' => $model,
         'options' => [ // Options of the Kartik's FileInput widget

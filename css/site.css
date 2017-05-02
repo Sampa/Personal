@@ -1,0 +1,412 @@
+/*! BASED ON
+ * Start Bootstrap - Business Casual (http://startbootstrap.com/)
+ * Copyright 2013-2016 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
+ */
+@import url('https://fonts.googleapis.com/css?family=UnifrakturCook:700');
+/**
+ * ELEMENTS AND SMALL HELPER CLASSES (more of them under "other" at the bottom)
+**/
+body {
+    font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    background: url('../img/bg.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+a:hover{
+    text-decoration: none;
+
+}
+h1,h2,h3,h4,h5,h6 {
+    font-family: 'UnifrakturCook', cursive;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: rgb(165,0,0);
+}
+p { font-size: 1.25em; line-height: 1.6; color: #000;}
+
+hr { max-width: 400px; border-color: #999999; }
+
+footer { background: #fff; background: rgba(255,255,255,0.9);}
+
+footer p { margin: 0; padding: 50px 0;}
+.oldRedText{
+    font-family: 'UnifrakturCook', cursive;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: rgb(165,0,0);
+}
+.sidebox {
+    margin-bottom: 20px;
+    border-radius:5px;
+    background: rgba(255,255,255,0.9);
+}
+.box {
+    margin-bottom: 20px;
+    padding: 30px 15px;
+    background: #fff;
+    background: rgba(255,255,255,0.9);
+}
+
+.intro-text { font-size: 2.55em; letter-spacing: 1px;}
+
+.img-border { float: none; margin: 0 auto 0; border: #999999 solid 1px; }
+
+.img-left {float: none;margin: 0 auto 0;}
+
+/**
+ * BREADCRUMBS
+ * http://bootstrapdesigntools.com/tools/bootstrap-breadcrumb-designer/
+**/
+.breadcrumb { /* breadcrumbs ul class */
+    text-align: center;
+    position:relative;
+    top: 0px;
+    width: 100%;
+    border: 0px solid rgba(165, 0, 0, 1);
+    border-radius: 4px;
+    display: block;
+    padding: 0px 15px ;
+    margin: 0 auto;
+    background: rgba(165, 0, 0, 0.56);
+
+}
+.breadcrumb li{font-size: 14px; }
+.breadcrumb a {color: rgba(255, 255, 255, 1); font-weight: bold}
+.breadcrumb a:hover {color: rgba(35, 82, 124,1);}
+.breadcrumb .active {color: rgba(20, 20, 20, 1); font-weight: bold}
+.breadcrumb>li+li:before {color: rgba(184, 184, 184, 1); content: "\276F\00a0";}
+/* END BREADCRUMBS */
+.indexWrap{
+    margin-top: 20px;
+}
+
+#secondNav{
+    position:relative;
+    top: -20px;
+    background: rgba(165, 0, 0, 0.56);
+}
+#secondNav ul{
+    text-align: center;
+    width: 100%;
+    border: 0px solid rgba(165, 0, 0, 1);
+    border-radius: 4px;
+    display: block;
+    padding: 0px 15px ;
+    margin: 0 auto;
+}
+#secondNav ul li{display: inline;}
+#secondNav ul li a {padding:2px 5px;color: rgba(255, 255, 255, 1); }
+#secondNav ul .active a, #secondNav ul li a:hover {
+    border-radius: 5px;
+    background: rgba(204, 204, 204, 0.5);
+    color: rgba(35, 82, 124,1);
+}
+#secondNav ul li a,#secondNav ul .active a,#secondNav ul .active {font-weight: bold;}
+
+/**
+ * LANGUAGE SELECTING
+**/
+#selectLang {
+    z-index: 9999;
+    position: relative;
+    top: 0px;
+    left: 0px;
+}
+#selectLang ul li {
+    position: relative;
+    padding: 0;
+}
+/* Size of the flags in the language selector */
+.flag { min-width: 3rem; min-height: 3rem; }
+
+
+/* big screens the top part of the layout */
+.redhand{display: none;}
+.brand img{
+    height: 150px;
+    width: auto;
+    float: left;
+}
+.brand div{
+    z-index: 999;
+    display: block;
+    margin: 0;
+    padding: 0;
+    /*position: absolute;*/
+    /*float: left;*/
+    position: relative;
+    font-family: 'UnifrakturCook', cursive;
+    color: rgb(165,0,0);
+    font-size: 28px;
+}
+/* end top part */
+
+/**
+ * RELATED TO MENU/NAVBAR
+**/
+/*menu collapsed*/
+.dovieBrand {
+    width: 100%;
+    position: absolute;
+    top: 0px;
+
+}
+.dovieBrand img {
+    height: 50px;
+    width: auto;
+    margin: 0;
+    padding: 0;
+}
+
+.dovieBrand span {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'UnifrakturCook', cursive;
+    color: rgb(165, 0, 0);
+}
+/*Button that slides out the menu when it's collapsed*/
+.navbar-toggle{
+    position: relative;
+    z-index: 9999;
+}
+/* END MENU COLL*/
+
+.brand {
+    font-family: 'UnifrakturCook', cursive;
+}
+
+.navbar-brand {
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.navbar-nav {
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 3px;
+}
+
+
+.img-full {
+    min-width: 100%;
+}
+
+.brand-before, .brand-name {
+    text-transform: capitalize;
+}
+
+.brand-before {
+    margin: 15px 0;
+}
+
+.brand-name {
+    margin: 0;
+    font-size: 4em;
+}
+
+.tagline-divider {
+    margin: 15px auto 3px;
+    max-width: 250px;
+    border-color: #999999;
+}
+
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus{
+    background: #fff;
+    background: rgba(255,255,255,0.9);
+}
+.categories-nav>ul{
+    margin-left: 15px;
+}
+.categories-nav>ul>li{
+    background: #fff;
+    background: rgba(255,255,255,0.5);
+    border:0;
+    margin-top: -5px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+/**
+ * SPECIAL CSS FOR DIFFERENT SCREEN SIZES
+**/
+
+/* top part of the layout. Only display these on smaller screens */
+.brand, .address-bar { display: none; }
+
+/*-- Sorting --*/
+
+/* add sorting icons to gridview sort links */
+a.asc:after, a.desc:after {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    padding-left: 5px;
+}
+
+a.asc:after {
+    content: /*"\e113"*/ "\e151";
+}
+
+a.desc:after {
+    content: /*"\e114"*/ "\e152";
+}
+
+.sort-numerical a.asc:after {
+    content: "\e153";
+}
+
+.sort-numerical a.desc:after {
+    content: "\e154";
+}
+
+.sort-ordinal a.asc:after {
+    content: "\e155";
+}
+
+.sort-ordinal a.desc:after {
+    content: "\e156";
+}
+
+/*-- Other --*/
+
+.grid-view th {
+    white-space: nowrap;
+}
+
+.hint-block {
+    display: block;
+    margin-top: 5px;
+    color: #999;
+}
+
+.error-summary {
+    color: #a94442;
+    background: #fdf7f7;
+    border-left: 3px solid #eed3d7;
+    padding: 10px 20px;
+    margin: 0 0 15px 0;
+}
+
+/* add red asterisk to required form fields */
+div.required label:after {
+    content: " *";
+    color: #e13431;
+}
+
+/*-- GridView options display tweaks --*/
+
+.user-index td:last-child,
+.articles-admin td:last-child {
+    width: 68px;
+}
+
+.article-view th {
+    min-width: 90px;
+}
+
+/*-- Css for nicer display of boolean yes/no values --*/
+
+.boolean-true {
+    font-weight: bold;
+    color: green;
+}
+
+.boolean-false {
+    font-weight: bold;
+    color: #e13431;
+}
+
+/*-- Css for nicer display of user roles --*/
+
+.role-theCreator {
+    font-weight: bold;
+    color: black;
+}
+
+.role-admin {
+    font-weight: bold;
+    color: #c4a500;
+}
+
+.role-editor {
+    font-weight: bold;
+    color: #800080;
+}
+
+.role-support {
+    font-weight: bold;
+    color: #009d00;
+}
+
+.role-premium {
+    font-weight: bold;
+    color: #4c4cff;
+}
+
+.role-member {
+    font-weight: bold;
+}
+
+/*-- Colors used for various data presentation purposes --*/
+
+.blue {
+    font-weight: bold;
+    color: #7373ff;
+}
+
+.green {
+    font-weight: bold;
+    color: #009d00;
+}
+
+.gold {
+    font-weight: bold;
+    color: #c4a500;
+}
+
+hr.top {
+    margin-top: 0px;
+    border-width: 1px;
+    border-color: #333;
+    text-align: left;
+}
+
+hr.article-devider {
+    border-width: 1px;
+    border-color: #444;
+    border-style: dashed;
+    text-align: left;
+}
+
+/*-- Password strength --*/
+
+/* hide strength meter so we can fade it in nicely with jQuery */
+.nz-meter-container {
+    display: none;
+}
+
+/**
+ *Currently not used, incase of two column layout
+**/
+aside{
+    height:900px;padding: 0; padding-top: 0px;
+    margin-top: 0px;
+    margin-left: -20px;
+    background: #fff;
+    background: rgba(255,255,255,0.9);
+    z-index: 2;
+    position: relative;
+}
+
+/**
+ * //frontend/themes/casual/views/article/search.twig
+**/
+#searchPageForm{display:none; padding: 5px 5px;}

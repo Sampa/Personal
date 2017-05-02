@@ -6,16 +6,15 @@ $params = array_merge(
     require(__DIR__ . '/params-local.php')
 );
 use \yii\helpers\Url;
-
+use mihaildev\ckeditor\CKEditor;
 return [
     'id' => 'app-frontend',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'language' => 'en',
     'controllerNamespace' => 'frontend\controllers',
-
     'components' => [
-        // here you can set theme used for your frontend application 
+        // here you can set theme used for your frontend application
         // - template comes with: 'default', 'slate', 'spacelab' and 'cerulean'
         'view' => [
             'class' => 'yii\web\View',
@@ -75,11 +74,14 @@ return [
                         new \Twig_SimpleFunction('PjaxEnd', function(){
                             \yii\widgets\Pjax::end();
                         }),
+                        new \Twig_SimpleFunction('CKEditorClassName', function(){
+                           return CKEditor::className();
+                        }),
                         new \Twig_SimpleFunction('AttachmentsTableWidget', function($model,$files='all'){
                             return \sampa\media\components\AttachmentsTable::widget(['model' => $model,'files'=>$files]);
                         }),
-                        new \Twig_SimpleFunction('TextFilesTableWidget', function($model){
-                            return \sampa\media\components\TextFilesTable::widget(['model' => $model]);
+                        new \Twig_SimpleFunction('AttachmentsTextTableWidget', function($model){
+                            return \sampa\media\components\AttachmentsTextTable::widget(['model' => $model]);
                         }),
                         new \Twig_SimpleFunction('AttachmentsInputWidget', function($model,$options=[]){
                             $options = [
@@ -97,15 +99,15 @@ return [
                             return \sampa\media\components\AttachmentsInput::widget($options);
                         }),
                         new \Twig_SimpleFunction('GalleryWidget', function($items){
-                            return dosamigos\gallery\Gallery::widget(['items' => $items]);
+                            return sampa\gallery\Gallery::widget(['items' => $items,'options'=>['id'=>'foo']]);
                         }),
                     ]
                 ],
                 // ...
             ],
             'theme' => [
-                'pathMap' => ['@app/views' => '@webroot/themes/casual/views'],
-                'baseUrl' => '@web/themes/casual',
+                'pathMap' => ['@app/views' =>  '@app/views'],//'@webroot/themes/casual/views'],
+                'baseUrl' => '@web/themes/slate',
             ],
         ],
         'user' => [
