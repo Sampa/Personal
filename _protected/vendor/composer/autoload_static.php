@@ -28,6 +28,10 @@ class ComposerStaticInitc1f2c44c31aac534099ffb2b113def7e
             'yii\\bootstrap\\' => 14,
             'yii\\' => 4,
         ),
+        's' => 
+        array (
+            'sampa\\media\\' => 12,
+        ),
         'p' => 
         array (
             'phpDocumentor\\Reflection\\' => 25,
@@ -36,10 +40,26 @@ class ComposerStaticInitc1f2c44c31aac534099ffb2b113def7e
         array (
             'nenad\\passwordStrength\\' => 23,
             'nenad\\' => 6,
+            'nemmo\\attachments\\' => 18,
         ),
         'm' => 
         array (
             'mihaildev\\ckeditor\\' => 19,
+        ),
+        'k' => 
+        array (
+            'kartik\\plugins\\fileinput\\' => 25,
+            'kartik\\file\\' => 12,
+            'kartik\\base\\' => 12,
+        ),
+        'h' => 
+        array (
+            'himiklab\\colorbox\\' => 18,
+        ),
+        'd' => 
+        array (
+            'dosamigos\\gallery\\' => 18,
+            'dosamigos\\fileupload\\' => 21,
         ),
         'c' => 
         array (
@@ -125,11 +145,15 @@ class ComposerStaticInitc1f2c44c31aac534099ffb2b113def7e
         array (
             0 => __DIR__ . '/..' . '/yiisoft/yii2',
         ),
+        'sampa\\media\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/sampa/yii2-media/src',
+        ),
         'phpDocumentor\\Reflection\\' => 
         array (
-            0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
-            1 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
-            2 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+            0 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
+            1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+            2 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
         ),
         'nenad\\passwordStrength\\' => 
         array (
@@ -140,9 +164,37 @@ class ComposerStaticInitc1f2c44c31aac534099ffb2b113def7e
             0 => __DIR__ . '/..' . '/nenad/yii2-widgets-base',
             1 => __DIR__ . '/..' . '/nenad/yii2-strength-meter',
         ),
+        'nemmo\\attachments\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/nemmo/yii2-attachments/src',
+        ),
         'mihaildev\\ckeditor\\' => 
         array (
             0 => __DIR__ . '/..' . '/mihaildev/yii2-ckeditor',
+        ),
+        'kartik\\plugins\\fileinput\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/bootstrap-fileinput',
+        ),
+        'kartik\\file\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-fileinput',
+        ),
+        'kartik\\base\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-krajee-base',
+        ),
+        'himiklab\\colorbox\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/himiklab/yii2-colorbox-widget',
+        ),
+        'dosamigos\\gallery\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/2amigos/yii2-gallery-widget/src',
+        ),
+        'dosamigos\\fileupload\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/2amigos/yii2-file-upload-widget/src',
         ),
         'codemix\\localeurls\\' => 
         array (

@@ -8,7 +8,7 @@
         "tutorial": "http://www.freetuts.org/tutorial/view?id=6",
         "source": "https://github.com/nenad-zivkovic/yii2-advanced-template"
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "require": {
         "php": ">=5.4.0",
         "yiisoft/yii2": "*",
@@ -17,9 +17,11 @@
         "nenad/yii2-password-strength": "*",
         "mihaildev/yii2-ckeditor": "*",
         "codemix/yii2-localeurls": "*",
-        "yiisoft/yii2-twig": "~2.0.0"
+        "yiisoft/yii2-twig": "~2.0.0",
+        "2amigos/yii2-file-upload-widget": "~1.0"
     },
     "require-dev": {
+        "sampa/yii2-media": "*",
         "codeception/codeception": "*",
         "yiisoft/yii2-debug": "*",
         "yiisoft/yii2-gii": "*",

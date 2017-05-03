@@ -30,19 +30,29 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php if (Yii::$app->user->can('deleteArticle')): ?>
 
         <?= Html::a(Yii::t('app', 'Delete'), ['delete', 'id' => $model->id], [
-            'class' => 'btn btn-danger',
-            'data' => [
-                'confirm' => Yii::t('app', 'Are you sure you want to delete this article?'),
-                'method' => 'post',
-            ],
+        'class' => 'btn btn-danger',
+        'data' => [
+        'confirm' => Yii::t('app', 'Are you sure you want to delete this article?'),
+        'method' => 'post',
+        ],
         ]) ?>
 
     <?php endif ?>
-    
+
     </div>
 
     </h1>
-
+    <?= \nemmo\attachments\components\AttachmentsTable::widget(['model' => $model]) ?>
+    <?= \nemmo\attachments\components\AttachmentsInput::widget([
+        'id' => 'file-input', // Optional
+        'model' => $model,
+        'options' => [ // Options of the Kartik's FileInput widget
+            'multiple' => true, // If you want to allow multiple upload, default to false
+        ],
+        'pluginOptions' => [ // Plugin options of the Kartik's FileInput widget
+            'maxFileCount' => 10 // Client max files
+        ]
+    ]) ?>
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [

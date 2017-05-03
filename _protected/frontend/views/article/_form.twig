@@ -1,0 +1,59 @@
+{{ use('mihaildev\ckeditor\CKEditor') }}
+{{ use('yii\helpers\Html') }}
+{{ use('yii\widgets\ActiveForm') }}
+{{ use('dosamigos\fileupload\FileUpload') }}
+{{ use('dosamigos\fileupload\FileUploadUi') }}
+
+
+
+{#/* @var $this yii\web\View */#}
+{#/* @var $model frontend\models\Article */#}
+{#/* @var $form yii\widgets\ActiveForm */#}
+
+
+<div class="article-form">
+
+    {% set form = active_form_begin() %}
+
+        {{ form.field(model, 'title').textInput({'maxlength': 255}) | raw }}
+
+        {{ form.field(model, 'summary').textarea({'rows': 6}) | raw }}
+
+        {{ form.field(model, 'content').widget(CKEditorClassName(),
+            {'editorOptions': { 'preset': 'full', 'inline': false}})| raw  }}
+
+    <div class="row">
+        <div class="col-lg-6">
+
+            {{ form.field(model, 'status').dropDownList(model.statusList) | raw }}
+
+            {{ form.field(model, 'category').dropDownList(model.categoryList) | raw }}
+
+        </div>
+    </div>
+    {#// Options of the Kartik's FileInput widget #}
+    {#// multiple If you want to allow multiple upload, default to false#}
+    {#pluginOptions // Plugin options of the Kartik's FileInput widget#}
+    {{ AttachmentsInputWidget(model) | raw }}
+
+    {#<!-- submit -->#}
+    <div class="form-group">
+        {% if model.isNewRecord %}
+            {% set label = t('Create') %}
+            {% set class = 'btn btn-success' %}
+        {% else %}
+            {% set label = t('Update') %}
+            {% set class = 'btn btn-primary' %}
+        {% endif %}
+
+        {{ html('SubmitButton',[label, {'class': class}]) | raw}}
+
+         {{ html('a',[t('Cancel'), ['article/index'], {'class': 'btn btn-default'}]) | raw }}
+    </div>
+
+   {{ active_form_end() }}
+
+    <!-- The table listing the files available for upload/download -->
+    <table role="presentation" class="table table-striped"><tbody class="files"></tbody></table>
+</div>
+

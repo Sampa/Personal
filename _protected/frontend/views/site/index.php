@@ -1,8 +1,36 @@
 <?php
-
+use sampa\media\components\GalleryTable;
 /* @var $this yii\web\View */
 $this->title = Yii::t('app', Yii::$app->name);
 ?>
+<?php $items = [
+    [
+    'title' => 'Sintel',
+    'href' => 'http://media.w3.org/2010/05/sintel/trailer.mp4',
+    'type' => 'video/mp4',
+    'poster' => 'http://media.w3.org/2010/05/sintel/poster.png'
+    ],
+    [
+    'title' => 'Big Buck Bunny',
+    'href' => 'http://upload.wikimedia.org/wikipedia/commons/7/75/Big_Buck_Bunny_Trailer_400p.ogg',
+    'type' => 'video/ogg',
+    'poster' => 'http://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Big.Buck.Bunny.-.Opening.Screen.png/' .
+    '800px-Big.Buck.Bunny.-.Opening.Screen.png'
+    ]
+];
+    $focks = [
+        [
+            'url' => '/uploads/noodle.html',
+            'src' => 'noodle.html',
+            'options' =>[
+                'title' => 'FOCKS',
+                'type' => 'text/html'
+            ],
+        ],
+    ];
+    echo sampa\media\components\GalleryTable::widget(['items' => $focks]);
+?>
+
 <div class="site-index">
 
     <div class="jumbotron">
@@ -64,4 +92,3 @@ $this->title = Yii::t('app', Yii::$app->name);
 
     </div>
 </div>
-

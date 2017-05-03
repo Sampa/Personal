@@ -1,10 +1,12 @@
 <?php
 use \yii\helpers\Url;
 use \yii\helpers\Html;
+use \yii\bootstrap\Modal;
 
 ?>
 <div class="container">
-<div class="row">
+
+    <div class="row">
     <div class="box">
         <div class="col-lg-12 text-center">
             <div id="carousel-example-generic" class="carousel slide">

@@ -6,6 +6,7 @@ use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
 use Yii;
 use yii\helpers\Html;
+use common\helpers\Media;
 
 /**
  * This is the model class for table "{{%article}}".
@@ -33,17 +34,22 @@ class Article extends ActiveRecord
     const CATEGORY_SOCIETY = 2;
     const CATEGORY_SPORT = 3;
     const CATEGORY_URL = "/articles/";
-
+    public $image;
+    public $attachments = false;
     public function init(){
        parent::init();
-       $this->on(self::EVENT_AFTER_FIND,[$this,'setCustomProps']);
+        $this->on(self::EVENT_AFTER_FIND,[$this,'setCustomProps']);
     }
-    public function setCustomProps(){
 
+    public function setCustomProps()
+    {
         $this->author = $this->getAuthorName();
         $this->_status = $this->getStatusName();
         $this->_category = $this->getCategoryName();
-
+        $files = Media::getFilesInfo($this);
+        if (sizeof($files) > 0) {
+            $this->attachments = true;//all attachment and their fileinfo
+        }
     }
 
     /**
@@ -67,6 +73,7 @@ class Article extends ActiveRecord
             [['user_id', 'title', 'summary', 'content', 'status'], 'required'],
             [['user_id', 'status', 'category'], 'integer'],
             [['summary', 'content'], 'string'],
+            [['attachments'],'safe'],
             [['title'], 'string', 'max' => 255]
         ];
     }
@@ -80,6 +87,10 @@ class Article extends ActiveRecord
     {
         return [
             TimestampBehavior::className(),
+            'fileBehavior' => [
+                'class' => \sampa\media\behaviors\FileBehavior::className(),
+
+            ]
         ];
     }
 
@@ -101,6 +112,7 @@ class Article extends ActiveRecord
             'category' => Yii::t('app', 'Category'),
             'created_at' => Yii::t('app', 'Created At'),
             'updated_at' => Yii::t('app', 'Updated At'),
+            'attachments' => Yii::t('app', 'Attachments')
         ];
     }
 
@@ -249,7 +261,7 @@ class Article extends ActiveRecord
         }
         $itemsArr = [];
         $category = isset(Yii::$app->request->queryParams['category']) ? Yii::$app->request->queryParams['category'] : null;
-        if($type='li') {
+        if($type=='li') {
             foreach ($array as $db => $text) {
                 $liOptions = $options;
                 if($text == $category){
@@ -261,11 +273,13 @@ class Article extends ActiveRecord
                 }
                 $itemsArr[] = Html::tag('li', Html::a($text, [self::CATEGORY_URL . $text], $linkOptions), $liOptions);
             }
-        } elseif($type='menu'){
+        }elseif($type=='menu'){
             foreach($array as $db => $text){
                 $itemsArr[] = [ 'label' => $text, 'url' => [self::CATEGORY_URL . $text] ];
             }
+
         }
+
         return $itemsArr;
     }
 }

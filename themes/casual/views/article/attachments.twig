@@ -1,0 +1,7 @@
+{# VARS ARE THE SAME AS IN VIEW.TWIG WHERE THIS IS INCLUDED#}
+{% if model.attachments %}
+    <h4 class="oldRedText">{{ t('Attachments') }}</h4>
+    {{ GalleryWidget( model.imageGalleryFiles ) | raw }}
+    {{ TextFilesTableWidget( model ) |raw }}
+</table>
+{% endif %}

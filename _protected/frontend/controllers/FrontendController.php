@@ -15,7 +15,7 @@ use common\models\LoginForm;
  */
 class FrontendController extends Controller
 {
-    public $layout = 'main.twig';
+    public $layout = 'main';
     public $login = "";
     public function init()
     {
@@ -75,7 +75,9 @@ class FrontendController extends Controller
                         'allow' => true
                     ],
                     [
-                        // other rules
+                        'controllers' => ['media'],
+                        'actions' => ['upload','image-delete','file-manager'],
+                        'allow' => true
                     ],
 
                 ], // rules

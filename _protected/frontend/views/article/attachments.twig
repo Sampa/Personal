@@ -1,0 +1,14 @@
+{# VARS ARE THE SAME AS IN VIEW.TWIG WHERE THIS IS INCLUDED#}
+{% if model.attachments %}
+    <h4 class="oldRedText">{{ t('Attachments') }}</h4>
+    {#{{ GalleryWidget( model.imageGalleryFiles ) | raw }}#}
+    {#{{ GalleryWidget( model.imageFiles ) | raw }}#}
+    {#{{ GalleryWidget( model.files) | raw }}#}
+    {{ AttachmentsWidget( 'TablePreview',model) | raw }}
+    {#{{ GalleryWidget( model.galleryFiles) | raw }}#}
+    {#{{ GalleryWidget( model.getTextGalleryFiles() ) | raw }}#}
+    {#{{ GalleryWidget( model.getTextFiles() ) | raw }}#}
+    {#{{ GalleryWidget( model.getpdfFiles() ) | raw }}#}
+    {#{{ AttachmentsTextTableWidget( model ) |raw }}#}
+</table>
+{% endif %}

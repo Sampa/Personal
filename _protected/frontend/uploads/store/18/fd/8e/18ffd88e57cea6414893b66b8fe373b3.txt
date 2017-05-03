@@ -1,0 +1,52 @@
+Det skulle kännas roligt med Trustlys tjänst är att jag själv handlar väldigt mycket på nätet och ser tillfällen framför mig när jag skulle ha nytta av det.Bra återbetalningar t.ex
+p2p för marknadsplatser med escrow tjänsten är också ett sådant skäl
+Ser ju ut som det går framåt på nyckeltalen, bra vinstmarginal
+Jag tycker om era tre punkter rörande arbetsplatsen, dvs: 
+14)Arbeta med de bästa
+	Vi värdesätter personlig utveckling. Du kommer att arbeta med skickliga och motiverade människor som hjälper dig att förbättra dina färdigheter.
+15)Gör skillnad
+	Vi strävar efter att göra betalningar på nätet säkrare, enklare, och smidigare. Med din hjälp kommer vi närmare det målet.
+16)Väx tillsammans med oss
+	Vi är ett företag som växer snabbt och där ditt bidrag verkligen kommer att göra skillnad.
+Varför? 
+Rörande punkt 14). Personlig utveckling är a och o för en ambitiös person, jag vill alltid ha möljighet att utvecklas och bli bättre. 
+Nyckeln till det är ju just att man hjälps åt på en arbetsplats. Både ge och ta.
+
+Rörande punkt 15). Låter helt enkelt som något jag själv skulle ha mycket nytta av personligen och det vore verkligen kul att bidra med att en sådan tjänst växer.
+ Vem vill inte att tjänster man gillar ska bli mer populära t.ex?
+
+Rörande punkt 16). Ett snabbväxande företag, som redan existerat i snart 8 år, är etablerat och ni har som sagt i princip en obegränsad skalbarhet på er tjänst. 
+Och som en framtida juniorutvecklare har jag ju allt intresse i världen av att vara med på en sådan resa! 
+
+känns  som att Trustly kan erbjuda en trygg start i karriären men ändå ha nästan obegränsade utvecklingsmöjligheter.
+ Jag är som sagt inte desperat efter ett jobb, utan det ska kännas rätt. 
+
+Och det finns som jag skrivit ovan flera nyckelfaktorer som gör Trustly till en väldigt intressant och spännande arbetsgivare.
+
+1) Sökte igenom källkoden till trustly för att få ett hum om era kvalitéts krav, och den genererade htmlkoden var väl inte perfekt (style attribut på element t.ex men det finns väl någon förklaring till det (dynamiskt genererat via javascript kanske?).
+Men annars såg det väl ut som något helt ok jag hade kunnat gjort. T.ex bootstrap är ju något man känner igen direkt via classnamnen på vissa element.
+
+2)Sidan har bra "affordance", vilket jag tycker är jätteviktigt i all utveckling! Hade varit tråkigt att jobba på ett företag som inte förstod vikten av det.
+
+3) Trustly som äffärsidé är bra då ni har några bra Unique Selling Points, bryggan mellan kort och banköverföring. Jag fick mitt bankkort automatspärrat pga misstänktbedrägeri 
+en gång och det var så nära att jag sket i att handla överhuvudtaget eftersom jag behövde göra banköverföring, då hade Trustly varit perfekt. 
+Inte alltid kortet är i närheten heller men iaf min dosa är alltid vid datorn.
+
+4)Intressant med payout express för spelbolag gillar er, finns det fler brancher som ni är lika fokuserade på?
+
+5)Inte enbart en nationell tjänst, fantastiskt! Detta ger ju en enorm tillväxtpotential och därmed möjligheter för alla drivna medarbetare! Thumbs up!
+
+6)Jag måste erkänna att företagsnamnet är genialt. "Våra anställda är Trustly"
+
+7)Följande formulering är som jag hittade på er hemsida gillar jag
+ "Vi anställer människor som är duktiga och drivande. Vi har en öppen företagskultur och uppmuntrar alla att bidra genom att dela med sig av idéer och åsikter." 
+
+8) Hur ser inkomstmodellen för Trustly ut? 
+9) SPontant känns Trustly som Swish, fast istället för privatbetalningar så gäller det för köp. Inga mellanhänder, snabbt, och enkla betalningar direkt från konto till konto. 
+Och vi vet ju hur populärt och smidigt Swish blivit redan bara i Sverige
+
+Nästa två punkter är petiga detaljer... =p
+10) Ni vet att er Historia beskrivs från höger till vänster va? Förvirrande. (under .com/se/about). Normala fallet är väl att historian läses från vänster till höger. Nu läser du mening den som precis! (point taken?)
+12)Jag gillar verkligen att tjänsten ger tydligen klara fördelar för både företag(extra betalningsalternativ, enkel integration, oåterkalliga betalningar) och privatperson.
+13) Vad kontoren i Malta och Barcelona Är det sales/support som sitter där?
+

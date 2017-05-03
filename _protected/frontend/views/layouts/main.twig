@@ -1,0 +1,37 @@
+{% set assetDir = register_asset_bundle('frontend/assets/AppAsset') %}  {# asset root for yii advanced template #}
+{{ use('LoginForm') }}
+{{   void(this.beginPage()) }}
+<!DOCTYPE html>
+<html lang="{{ app.language }}">
+<head>
+    <meta charset="{{ app.charset }}">
+    <meta name="viewport" content="width=device-width, initial-scale=2">
+    {{ html('CsrfMetaTags') | raw }}
+    <title>{{ this.title }}</title>
+    {{ void(this.head) }}
+</head>
+<body>
+{{   void(this.beginBody()) }}
+    <!-- TOP INTRO TEXTS + LOGO -->
+    <div class="brand"> <img src="{{ app.view.theme.baseUrl }}/img/redhand.svg"> <span>Dovie' andi se tovya sagain</span> </div>
+    <div class="address-bar"> {{ t('Programming') }} | {{ t('World Today') }} | {{ t('Fun') }} | {{ t('Personal') }} </div>
+    <!-- NAVBAR/MENU -->
+    {% include 'navbar.twig' %}
+
+    <!-- BREADCRUMBS -->
+    <div id="breadcrumbs" class="row"> {{ Breadcrumbs({ 'links': this.params['breadcrumbs'] }) | raw }} </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="container-fluid" >
+    <!-- RENDERED VIEW FILE -->
+        <div  class="indexWrap"> {{ content | raw }} </div>
+    <!-- SLIDE OUT PANELS (Language/Search/Login)-->
+        {% include 'side.twig' %}
+    </div>
+    <!-- FOOTER -->
+    {% include 'layouts/footer.twig' %}
+
+{{   void(this.endBody()) }}
+</body>
+</html>
+{{   void(this.endPage()) }}
