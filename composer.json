@@ -22,7 +22,6 @@
     },
     "require-dev": {
         "sampa/yii2-media": "*",
-        "sampa/yii2-gallery-widget": "*",
         "codeception/codeception": "*",
         "yiisoft/yii2-debug": "*",
         "yiisoft/yii2-gii": "*",

@@ -99,7 +99,12 @@ return [
                             return \sampa\media\components\AttachmentsInput::widget($options);
                         }),
                         new \Twig_SimpleFunction('GalleryWidget', function($items){
-                            return sampa\gallery\Gallery::widget(['items' => $items,'options'=>['id'=>'foo']]);
+                            return sampa\media\components\Gallery::widget(['items' => $items]);
+                        }),
+                        new \Twig_SimpleFunction('AttachmentsWidget', function($type,$model){
+                            if($type=='TablePreview'){
+                                return sampa\media\components\GalleryTable::widget(['model'=>$model,'items'=>$model->galleryFiles]);
+                            }
                         }),
                     ]
                 ],

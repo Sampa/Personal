@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "b425f82f4371dcd15152db0bf2c5b756",
+    "content-hash": "be5ff570fc00db2e643d53292feadc04",
     "packages": [
         {
             "name": "2amigos/yii2-file-upload-widget",
@@ -615,165 +615,6 @@
             "time": "2017-03-13T06:30:53+00:00"
         },
         {
-            "name": "kartik-v/bootstrap-fileinput",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/kartik-v/bootstrap-fileinput.git",
-                "reference": "8872c729be3d19a944f96839398d41b0b9b9cb84"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/bootstrap-fileinput/zipball/8872c729be3d19a944f96839398d41b0b9b9cb84",
-                "reference": "8872c729be3d19a944f96839398d41b0b9b9cb84",
-                "shasum": ""
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "4.3.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "kartik\\plugins\\fileinput\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Kartik Visweswaran",
-                    "email": "kartikv2@gmail.com",
-                    "homepage": "http://www.krajee.com/"
-                }
-            ],
-            "description": "An enhanced HTML 5 file input for Bootstrap 3.x with features for file preview for many file types, multiple selection, ajax uploads, and more.",
-            "homepage": "https://github.com/kartik-v/bootstrap-fileinput",
-            "keywords": [
-                "ajax",
-                "bootstrap",
-                "delete",
-                "file",
-                "image",
-                "input",
-                "jquery",
-                "multiple",
-                "preview",
-                "progress",
-                "upload"
-            ],
-            "time": "2017-04-30 17:22:43"
-        },
-        {
-            "name": "kartik-v/yii2-krajee-base",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/kartik-v/yii2-krajee-base.git",
-                "reference": "a85da2cf945aa649a7ad1bd3b5885abffdd36090"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/yii2-krajee-base/zipball/a85da2cf945aa649a7ad1bd3b5885abffdd36090",
-                "reference": "a85da2cf945aa649a7ad1bd3b5885abffdd36090",
-                "shasum": ""
-            },
-            "require": {
-                "yiisoft/yii2-bootstrap": "@dev"
-            },
-            "type": "yii2-extension",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.8.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "kartik\\base\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Kartik Visweswaran",
-                    "email": "kartikv2@gmail.com",
-                    "homepage": "http://www.krajee.com/"
-                }
-            ],
-            "description": "Base library and foundation components for all Yii2 Krajee extensions.",
-            "homepage": "https://github.com/kartik-v/yii2-krajee-base",
-            "keywords": [
-                "base",
-                "extension",
-                "foundation",
-                "krajee",
-                "widget",
-                "yii2"
-            ],
-            "time": "2017-04-26 13:21:35"
-        },
-        {
-            "name": "kartik-v/yii2-widget-fileinput",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/kartik-v/yii2-widget-fileinput.git",
-                "reference": "6b9c344c41df5d5c305589770893e14628e6eacc"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/yii2-widget-fileinput/zipball/6b9c344c41df5d5c305589770893e14628e6eacc",
-                "reference": "6b9c344c41df5d5c305589770893e14628e6eacc",
-                "shasum": ""
-            },
-            "require": {
-                "kartik-v/bootstrap-fileinput": "~4.2",
-                "kartik-v/yii2-krajee-base": "~1.7"
-            },
-            "type": "yii2-extension",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "kartik\\file\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Kartik Visweswaran",
-                    "email": "kartikv2@gmail.com",
-                    "homepage": "http://www.krajee.com/"
-                }
-            ],
-            "description": "An enhanced FileInput widget for Bootstrap 3.x with file preview, multiple selection, and more features (sub repo split from yii2-widgets)",
-            "homepage": "https://github.com/kartik-v/yii2-widget-fileinput",
-            "keywords": [
-                "extension",
-                "file",
-                "form",
-                "input",
-                "jquery",
-                "plugin",
-                "upload",
-                "widget",
-                "yii2"
-            ],
-            "time": "2017-04-15 05:25:51"
-        },
-        {
             "name": "mihaildev/yii2-ckeditor",
             "version": "dev-master",
             "source": {
@@ -971,76 +812,17 @@
             "time": "2014-11-19 17:33:46"
         },
         {
-            "name": "sampa/yii2-media",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Sampa/yii2-media.git",
-                "reference": "a22e43de821b20866a9717643f245431ba2b99d0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Sampa/yii2-media/zipball/a22e43de821b20866a9717643f245431ba2b99d0",
-                "reference": "a22e43de821b20866a9717643f245431ba2b99d0",
-                "shasum": ""
-            },
-            "require": {
-                "2amigos/yii2-gallery-widget": "*",
-                "kartik-v/yii2-widget-fileinput": "~1.0.0",
-                "php": ">=5.4.0",
-                "yiisoft/yii2": "~2.0.0"
-            },
-            "require-dev": {
-                "phpunit/dbunit": "~1.0",
-                "phpunit/phpunit": "~4.0"
-            },
-            "type": "yii2-extension",
-            "extra": {
-                "asset-installer-paths": {
-                    "npm-asset-library": "vendor/npm",
-                    "bower-asset-library": "vendor/bower"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "sampa\\media\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-4-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Daniel van den Berg aka Sampa",
-                    "email": "idrini@gmail.com",
-                    "homepage": "https://github.com/sampa",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Extension for file uploading and attaching to the models with functions for handling media",
-            "homepage": "https://github.com/Sampa/yii2-attachments",
-            "keywords": [
-                "extension",
-                "file",
-                "media",
-                "upload",
-                "yii2"
-            ],
-            "time": "2017-04-30 20:31:41"
-        },
-        {
             "name": "swiftmailer/swiftmailer",
             "version": "5.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/swiftmailer/swiftmailer.git",
-                "reference": "06541c8f385380d4d42b25178863e94f5108d10b"
+                "reference": "cd4ffa87f4902527b1725587d368062c28eb98c2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/06541c8f385380d4d42b25178863e94f5108d10b",
-                "reference": "06541c8f385380d4d42b25178863e94f5108d10b",
+                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/cd4ffa87f4902527b1725587d368062c28eb98c2",
+                "reference": "cd4ffa87f4902527b1725587d368062c28eb98c2",
                 "shasum": ""
             },
             "require": {
@@ -1081,7 +863,7 @@
                 "mail",
                 "mailer"
             ],
-            "time": "2017-04-30 17:02:04"
+            "time": "2017-05-01 15:54:38"
         },
         {
             "name": "twig/twig",
@@ -1151,12 +933,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-framework.git",
-                "reference": "670b7146e70b47f6f72f6ca720f4971fcb11f82f"
+                "reference": "9869f772affa130a98f3f44d976f01f8dbfcf4bf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/670b7146e70b47f6f72f6ca720f4971fcb11f82f",
-                "reference": "670b7146e70b47f6f72f6ca720f4971fcb11f82f",
+                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/9869f772affa130a98f3f44d976f01f8dbfcf4bf",
+                "reference": "9869f772affa130a98f3f44d976f01f8dbfcf4bf",
                 "shasum": ""
             },
             "require": {
@@ -1243,7 +1025,7 @@
                 "framework",
                 "yii2"
             ],
-            "time": "2017-04-30 19:14:58"
+            "time": "2017-05-02 22:53:21"
         },
         {
             "name": "yiisoft/yii2-bootstrap",
@@ -1351,12 +1133,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-swiftmailer.git",
-                "reference": "23b69e5c257c30bfcb1f88157c135a979f22d8eb"
+                "reference": "042984d1c9541f0f92139a88d4890145ade2f2bd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-swiftmailer/zipball/23b69e5c257c30bfcb1f88157c135a979f22d8eb",
-                "reference": "23b69e5c257c30bfcb1f88157c135a979f22d8eb",
+                "url": "https://api.github.com/repos/yiisoft/yii2-swiftmailer/zipball/042984d1c9541f0f92139a88d4890145ade2f2bd",
+                "reference": "042984d1c9541f0f92139a88d4890145ade2f2bd",
                 "shasum": ""
             },
             "require": {
@@ -1393,7 +1175,7 @@
                 "swiftmailer",
                 "yii2"
             ],
-            "time": "2017-04-12 15:12:45"
+            "time": "2017-05-01 08:29:44"
         },
         {
             "name": "yiisoft/yii2-twig",
@@ -1506,48 +1288,6 @@
                 "parser"
             ],
             "time": "2016-10-30 11:50:56"
-        },
-        {
-            "name": "bower-asset/jquery-colorbox",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/jackmoore/colorbox.git",
-                "reference": "540e406439f228f550c7465c374f1a24b43e9414"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/jackmoore/colorbox/zipball/540e406439f228f550c7465c374f1a24b43e9414",
-                "reference": "540e406439f228f550c7465c374f1a24b43e9414",
-                "shasum": ""
-            },
-            "require": {
-                "bower-asset/jquery": ">=1.3.2"
-            },
-            "type": "bower-asset-library",
-            "extra": {
-                "bower-asset-main": "jquery.colorbox.js",
-                "bower-asset-ignore": [
-                    "colorbox.jquery.json",
-                    "colorbox.ai",
-                    "content",
-                    "example1/index.html",
-                    "example2/index.html",
-                    "example3/index.html",
-                    "example4/index.html",
-                    "example5/index.html"
-                ]
-            },
-            "description": "jQuery lightbox and modal window plugin",
-            "keywords": [
-                "gallery",
-                "jquery-plugin",
-                "lightbox",
-                "modal",
-                "popup",
-                "ui"
-            ],
-            "time": "2016-09-10 20:50:24"
         },
         {
             "name": "bower-asset/typeahead.js",
@@ -1857,12 +1597,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/fzaninotto/Faker.git",
-                "reference": "cc5720eadd8b231a522c1740a52d49a1b061b15d"
+                "reference": "309b4e99947d9b9806a797416f2f36259a3df0cb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/cc5720eadd8b231a522c1740a52d49a1b061b15d",
-                "reference": "cc5720eadd8b231a522c1740a52d49a1b061b15d",
+                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/309b4e99947d9b9806a797416f2f36259a3df0cb",
+                "reference": "309b4e99947d9b9806a797416f2f36259a3df0cb",
                 "shasum": ""
             },
             "require": {
@@ -1899,7 +1639,7 @@
                 "faker",
                 "fixtures"
             ],
-            "time": "2017-04-24 16:07:00"
+            "time": "2017-05-02 09:16:26"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -1907,12 +1647,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "b517bd912afa5aa1033ce434d7138641fd6c31ab"
+                "reference": "8353b3fd857029dbfdb4bdf9676ce0258088ea28"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/b517bd912afa5aa1033ce434d7138641fd6c31ab",
-                "reference": "b517bd912afa5aa1033ce434d7138641fd6c31ab",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/8353b3fd857029dbfdb4bdf9676ce0258088ea28",
+                "reference": "8353b3fd857029dbfdb4bdf9676ce0258088ea28",
                 "shasum": ""
             },
             "require": {
@@ -1922,7 +1662,7 @@
             },
             "require-dev": {
                 "ext-curl": "*",
-                "phpunit/phpunit": "^4.0",
+                "phpunit/phpunit": "^4.0 || ^5.0",
                 "psr/log": "^1.0"
             },
             "suggest": {
@@ -1964,7 +1704,7 @@
                 "rest",
                 "web service"
             ],
-            "time": "2017-04-07 20:03:48"
+            "time": "2017-05-01 09:44:08"
         },
         {
             "name": "guzzlehttp/promises",
@@ -2083,47 +1823,163 @@
             "time": "2017-03-20 17:10:46"
         },
         {
-            "name": "himiklab/yii2-colorbox-widget",
+            "name": "kartik-v/bootstrap-fileinput",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/himiklab/yii2-colorbox-widget.git",
-                "reference": "c4aee292cdeabe03e996eb4396719376c2252602"
+                "url": "https://github.com/kartik-v/bootstrap-fileinput.git",
+                "reference": "6c4be4faf6d471ae23caec142c74f8cf7b2a191c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/himiklab/yii2-colorbox-widget/zipball/c4aee292cdeabe03e996eb4396719376c2252602",
-                "reference": "c4aee292cdeabe03e996eb4396719376c2252602",
+                "url": "https://api.github.com/repos/kartik-v/bootstrap-fileinput/zipball/6c4be4faf6d471ae23caec142c74f8cf7b2a191c",
+                "reference": "6c4be4faf6d471ae23caec142c74f8cf7b2a191c",
                 "shasum": ""
             },
-            "require": {
-                "bower-asset/jquery-colorbox": "*",
-                "yiisoft/yii2": "*"
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "4.3.x-dev"
+                }
             },
-            "type": "yii2-extension",
             "autoload": {
                 "psr-4": {
-                    "himiklab\\colorbox\\": ""
+                    "kartik\\plugins\\fileinput\\": ""
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "MIT"
+                "BSD-3-Clause"
             ],
             "authors": [
                 {
-                    "name": "HimikLab",
-                    "homepage": "https://github.com/himiklab/"
+                    "name": "Kartik Visweswaran",
+                    "email": "kartikv2@gmail.com",
+                    "homepage": "http://www.krajee.com/"
                 }
             ],
-            "description": "Customizable lightbox widget for Yii2",
+            "description": "An enhanced HTML 5 file input for Bootstrap 3.x with features for file preview for many file types, multiple selection, ajax uploads, and more.",
+            "homepage": "https://github.com/kartik-v/bootstrap-fileinput",
             "keywords": [
-                "colorbox",
-                "lightbox",
+                "ajax",
+                "bootstrap",
+                "delete",
+                "file",
+                "image",
+                "input",
+                "jquery",
+                "multiple",
+                "preview",
+                "progress",
+                "upload"
+            ],
+            "time": "2017-05-02 10:32:01"
+        },
+        {
+            "name": "kartik-v/yii2-krajee-base",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kartik-v/yii2-krajee-base.git",
+                "reference": "a85da2cf945aa649a7ad1bd3b5885abffdd36090"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kartik-v/yii2-krajee-base/zipball/a85da2cf945aa649a7ad1bd3b5885abffdd36090",
+                "reference": "a85da2cf945aa649a7ad1bd3b5885abffdd36090",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2-bootstrap": "@dev"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.8.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "kartik\\base\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Kartik Visweswaran",
+                    "email": "kartikv2@gmail.com",
+                    "homepage": "http://www.krajee.com/"
+                }
+            ],
+            "description": "Base library and foundation components for all Yii2 Krajee extensions.",
+            "homepage": "https://github.com/kartik-v/yii2-krajee-base",
+            "keywords": [
+                "base",
+                "extension",
+                "foundation",
+                "krajee",
                 "widget",
                 "yii2"
             ],
-            "time": "2016-02-02 10:23:58"
+            "time": "2017-04-26 13:21:35"
+        },
+        {
+            "name": "kartik-v/yii2-widget-fileinput",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kartik-v/yii2-widget-fileinput.git",
+                "reference": "6b9c344c41df5d5c305589770893e14628e6eacc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kartik-v/yii2-widget-fileinput/zipball/6b9c344c41df5d5c305589770893e14628e6eacc",
+                "reference": "6b9c344c41df5d5c305589770893e14628e6eacc",
+                "shasum": ""
+            },
+            "require": {
+                "kartik-v/bootstrap-fileinput": "~4.2",
+                "kartik-v/yii2-krajee-base": "~1.7"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "kartik\\file\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Kartik Visweswaran",
+                    "email": "kartikv2@gmail.com",
+                    "homepage": "http://www.krajee.com/"
+                }
+            ],
+            "description": "An enhanced FileInput widget for Bootstrap 3.x with file preview, multiple selection, and more features (sub repo split from yii2-widgets)",
+            "homepage": "https://github.com/kartik-v/yii2-widget-fileinput",
+            "keywords": [
+                "extension",
+                "file",
+                "form",
+                "input",
+                "jquery",
+                "plugin",
+                "upload",
+                "widget",
+                "yii2"
+            ],
+            "time": "2017-04-15 05:25:51"
         },
         {
             "name": "myclabs/deep-copy",
@@ -2166,65 +2022,6 @@
                 "object graph"
             ],
             "time": "2017-04-12T18:52:22+00:00"
-        },
-        {
-            "name": "nemmo/yii2-attachments",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Nemmo/yii2-attachments.git",
-                "reference": "add170f66b15a6ef24220fa316c8ce18a2e3a915"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Nemmo/yii2-attachments/zipball/add170f66b15a6ef24220fa316c8ce18a2e3a915",
-                "reference": "add170f66b15a6ef24220fa316c8ce18a2e3a915",
-                "shasum": ""
-            },
-            "require": {
-                "himiklab/yii2-colorbox-widget": "*",
-                "kartik-v/yii2-widget-fileinput": "~1.0.0",
-                "php": ">=5.4.0",
-                "yiisoft/yii2": "~2.0.0"
-            },
-            "require-dev": {
-                "phpunit/dbunit": "~1.0",
-                "phpunit/phpunit": "~4.0"
-            },
-            "type": "yii2-extension",
-            "extra": {
-                "asset-installer-paths": {
-                    "npm-asset-library": "vendor/npm",
-                    "bower-asset-library": "vendor/bower"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "nemmo\\attachments\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-4-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Alimzhan Abuov aka Nemmo",
-                    "email": "alimzhan.abu@yandex.kz",
-                    "homepage": "http://alimzhan.kz",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Extension for file uploading and attaching to the models",
-            "homepage": "https://github.com/Nemmo/yii2-attachments",
-            "keywords": [
-                "attachment",
-                "extension",
-                "file",
-                "upload",
-                "yii2"
-            ],
-            "time": "2017-03-03 10:56:59"
         },
         {
             "name": "phpdocumentor/reflection-common",
@@ -2728,12 +2525,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "e22c131386168fcc045104e2de2d82708d12c855"
+                "reference": "9a228c6857478d8b0f619a4cd3763911705c002a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/e22c131386168fcc045104e2de2d82708d12c855",
-                "reference": "e22c131386168fcc045104e2de2d82708d12c855",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/9a228c6857478d8b0f619a4cd3763911705c002a",
+                "reference": "9a228c6857478d8b0f619a4cd3763911705c002a",
                 "shasum": ""
             },
             "require": {
@@ -2802,7 +2599,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2017-04-25 10:39:19"
+            "time": "2017-05-02 07:14:40"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -2959,6 +2756,67 @@
                 "psr-3"
             ],
             "time": "2016-10-10 12:19:37"
+        },
+        {
+            "name": "sampa/yii2-media",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Sampa/yii2-media.git",
+                "reference": "84bcb6316cd15a08cc8c739621c2f41327a6c730"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Sampa/yii2-media/zipball/84bcb6316cd15a08cc8c739621c2f41327a6c730",
+                "reference": "84bcb6316cd15a08cc8c739621c2f41327a6c730",
+                "shasum": ""
+            },
+            "require": {
+                "2amigos/yii2-gallery-widget": "*",
+                "bower-asset/blueimp-gallery": "~2.17.0",
+                "kartik-v/yii2-widget-fileinput": "~1.0.0",
+                "php": ">=5.4.0",
+                "yiisoft/yii2": "~2.0.0"
+            },
+            "require-dev": {
+                "phpunit/dbunit": "~1.0",
+                "phpunit/phpunit": "~4.0",
+                "scrutinizer/ocular": "~1.1"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "asset-installer-paths": {
+                    "npm-asset-library": "vendor/npm",
+                    "bower-asset-library": "vendor/bower"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "sampa\\media\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-4-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Daniel van den Berg aka Sampa",
+                    "email": "idrini@gmail.com",
+                    "homepage": "https://github.com/sampa",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Extension for file uploading and attaching to the models with functions for handling media",
+            "homepage": "https://github.com/Sampa/yii2-attachments",
+            "keywords": [
+                "extension",
+                "file",
+                "media",
+                "upload",
+                "yii2"
+            ],
+            "time": "2017-05-03T10:08:16+00:00"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",
@@ -3649,12 +3507,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/css-selector.git",
-                "reference": "6f93d828043df224708300702d0022b24f09f046"
+                "reference": "4d882dced7b995d5274293039370148e291808f2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/css-selector/zipball/6f93d828043df224708300702d0022b24f09f046",
-                "reference": "6f93d828043df224708300702d0022b24f09f046",
+                "url": "https://api.github.com/repos/symfony/css-selector/zipball/4d882dced7b995d5274293039370148e291808f2",
+                "reference": "4d882dced7b995d5274293039370148e291808f2",
                 "shasum": ""
             },
             "require": {
@@ -3694,7 +3552,7 @@
             ],
             "description": "Symfony CssSelector Component",
             "homepage": "https://symfony.com",
-            "time": "2017-04-12 14:14:56"
+            "time": "2017-05-01 15:01:29"
         },
         {
             "name": "symfony/debug",
@@ -3814,12 +3672,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/event-dispatcher.git",
-                "reference": "73ccae57d5a439a9debf34e3f9bec78b56241949"
+                "reference": "145ec57e6d74270696e85a95e632227e8bde2faf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/73ccae57d5a439a9debf34e3f9bec78b56241949",
-                "reference": "73ccae57d5a439a9debf34e3f9bec78b56241949",
+                "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/145ec57e6d74270696e85a95e632227e8bde2faf",
+                "reference": "145ec57e6d74270696e85a95e632227e8bde2faf",
                 "shasum": ""
             },
             "require": {
@@ -3869,7 +3727,7 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "https://symfony.com",
-            "time": "2017-04-13 13:45:25"
+            "time": "2017-05-01 15:01:29"
         },
         {
             "name": "symfony/finder",
@@ -4034,12 +3892,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "e389c47ccde1cc76d3598a3d10afa6edee355690"
+                "reference": "dcbd318c241341c82444a8d92b7a0ddf6419f496"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/e389c47ccde1cc76d3598a3d10afa6edee355690",
-                "reference": "e389c47ccde1cc76d3598a3d10afa6edee355690",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/dcbd318c241341c82444a8d92b7a0ddf6419f496",
+                "reference": "dcbd318c241341c82444a8d92b7a0ddf6419f496",
                 "shasum": ""
             },
             "require": {
@@ -4081,7 +3939,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2017-04-12 20:43:31"
+            "time": "2017-05-01 15:01:29"
         },
         {
             "name": "webmozart/assert",
@@ -4139,12 +3997,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-debug.git",
-                "reference": "959a651b33417405bea106561a3c71c8312bdfa1"
+                "reference": "02cd913409fefab8ba7a0204b7f21c92e9fa9ed4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-debug/zipball/959a651b33417405bea106561a3c71c8312bdfa1",
-                "reference": "959a651b33417405bea106561a3c71c8312bdfa1",
+                "url": "https://api.github.com/repos/yiisoft/yii2-debug/zipball/02cd913409fefab8ba7a0204b7f21c92e9fa9ed4",
+                "reference": "02cd913409fefab8ba7a0204b7f21c92e9fa9ed4",
                 "shasum": ""
             },
             "require": {
@@ -4178,7 +4036,7 @@
                 "debugger",
                 "yii2"
             ],
-            "time": "2017-04-26 10:59:25"
+            "time": "2017-05-01 14:19:34"
         },
         {
             "name": "yiisoft/yii2-faker",
@@ -4283,9 +4141,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "sampa/yii2-media": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

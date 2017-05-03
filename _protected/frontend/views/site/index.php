@@ -1,5 +1,5 @@
 <?php
-use sampa\gallery\Gallery;
+use sampa\media\components\GalleryTable;
 /* @var $this yii\web\View */
 $this->title = Yii::t('app', Yii::$app->name);
 ?>
@@ -27,14 +27,8 @@ $this->title = Yii::t('app', Yii::$app->name);
                 'type' => 'text/html'
             ],
         ],
-        [
-
-            'title' => 'TOMATO TEST',
-            'href' => '/uploads/tomato.html',
-            'type' => 'text/html'
-        ]
     ];
-    echo Gallery::widget(['items' => $focks]);
+    echo sampa\media\components\GalleryTable::widget(['items' => $focks]);
 ?>
 
 <div class="site-index">
@@ -98,4 +92,3 @@ $this->title = Yii::t('app', Yii::$app->name);
 
     </div>
 </div>
-

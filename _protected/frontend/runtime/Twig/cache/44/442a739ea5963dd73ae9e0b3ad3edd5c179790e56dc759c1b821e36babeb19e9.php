@@ -22,14 +22,25 @@ class __TwigTemplate_43ae61ffce86c2cb3b00243609bdc9290b163632f4d086bff7c12e23ed8
             echo twig_escape_filter($this->env, \common\helpers\My::t("Attachments"), "html", null, true);
             echo "</h4>
     ";
-            // line 4
-            echo call_user_func_array($this->env->getFunction('GalleryWidget')->getCallable(), array($this->getAttribute(($context["model"] ?? null), "imageGalleryFiles", array())));
+            // line 5
+            echo "    ";
+            // line 6
+            echo "    ";
+            // line 7
+            echo "    ";
+            echo call_user_func_array($this->env->getFunction('AttachmentsWidget')->getCallable(), array("TablePreview", ($context["model"] ?? null)));
             echo "
     ";
-            // line 5
-            echo call_user_func_array($this->env->getFunction('AttachmentsTextTableWidget')->getCallable(), array(($context["model"] ?? null)));
-            echo "
-</table>
+            // line 9
+            echo "    ";
+            // line 10
+            echo "    ";
+            // line 11
+            echo "    ";
+            // line 12
+            echo "    ";
+            // line 13
+            echo "</table>
 ";
         }
     }
@@ -46,7 +57,7 @@ class __TwigTemplate_43ae61ffce86c2cb3b00243609bdc9290b163632f4d086bff7c12e23ed8
 
     public function getDebugInfo()
     {
-        return array (  30 => 5,  26 => 4,  21 => 3,  19 => 2,);
+        return array (  43 => 13,  41 => 12,  39 => 11,  37 => 10,  35 => 9,  30 => 7,  28 => 6,  26 => 5,  21 => 3,  19 => 2,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */

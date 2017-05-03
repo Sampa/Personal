@@ -69,6 +69,8 @@ return [
                 '<alias:search>' => 'article/search',
                 '<alias:about|contact|login|signup|logout>' => 'site/<alias>',
                 '<controller:\w+>/<id:\d+>/<title:\w+>' => '<controller>/view',
+                '<controller:\w+>/<id:\d+>' => '<controller>/view',
+                '<controller:\w+>/admin/<id:\d+>' => '<controller>/view',
                 'media/upload/<type:\w+>' =>'media/upload',
 //                'media/upload/<type:\w+>/<class:\w+>/<id:\d+>' =>'media/upload',
                 'articles/<category:\w+>' => 'article/index',
