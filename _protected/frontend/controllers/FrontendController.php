@@ -15,7 +15,7 @@ use common\models\LoginForm;
  */
 class FrontendController extends Controller
 {
-    public $layout = 'main';
+    public $layout = 'main.twig';
     public $login = "";
     public function init()
     {

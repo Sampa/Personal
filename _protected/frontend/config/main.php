@@ -50,6 +50,9 @@ return [
                        // 'SerialColumn' => '\yii\grid\SerialColumn::className',
                         'ArticleCategoryListItems' => 'frontend\models\Article::getCategoryListItems',
                         'CssHelperArticleCategoryCss' => '\common\helpers\CssHelper::articleCategoryCss',
+                        new \Twig_SimpleFunction('PasswordInput',function(){
+                           return nenad\passwordStrength\PasswordInput::classname();
+                        }),
                         new \Twig_SimpleFunction('SerialColumn',function(){
                            return \yii\grid\SerialColumn::className();
                         }),
@@ -101,17 +104,15 @@ return [
                         new \Twig_SimpleFunction('GalleryWidget', function($items){
                             return sampa\media\components\Gallery::widget(['items' => $items]);
                         }),
-                        new \Twig_SimpleFunction('AttachmentsWidget', function($type,$model){
-                            if($type=='TablePreview'){
-                                return sampa\media\components\GalleryTable::widget(['model'=>$model,'items'=>$model->galleryFiles]);
-                            }
+                        new \Twig_SimpleFunction('GalleryTableWidget', function($options){
+                                return sampa\media\components\GalleryTable::widget($options);
                         }),
                     ]
                 ],
                 // ...
             ],
             'theme' => [
-                'pathMap' => ['@app/views' =>  '@app/views'],//'@webroot/themes/casual/views'],
+                'pathMap' => ['@app/views' =>  '@webroot/themes/slate/views'],//'@webroot/themes/casual/views'],
                 'baseUrl' => '@web/themes/slate',
             ],
         ],

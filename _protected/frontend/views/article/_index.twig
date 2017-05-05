@@ -1,5 +1,5 @@
 {{ set(this, 'title', t(app.name) ~' '~ model.title ) }}
-<div class="col-lg-4 col-md-6">
+<div class="col-lg-6 col-md-6">
     <div class="box text-center" >
         #{{ model.id }}
         <h2 class="intro-text text-center"><a href="/article/{{ model.id }}/{{ model.title|replace({ ' ': '_' }) }}" class="oldRedText"> {{ model.title }} </a></h2>
@@ -21,7 +21,7 @@
             {% else %}
                 {# include 'attachments.twig' #}
             {% endif %}
-            <a href="view?id={{ model.id }}" class="oldRedText btn btn-default btn-lg">{{ t('Read more') }}</a>
+            <a href="view?id={{ model.id }}" class="oldRedText btn btn-default">{{ t('Read more') }}</a>
 
     </div>
 </div>

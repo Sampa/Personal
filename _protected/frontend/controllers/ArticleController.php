@@ -16,6 +16,7 @@ class ArticleController extends FrontendController
 {
     const PAGE_SIZE = 6;
     private $uploadDir = "@uploads/article";
+    private $viewaffix = '.twig'; //null to use .php views, can be set to .twig
     /**
      * Lists all Article models.
      *
@@ -43,7 +44,7 @@ class ArticleController extends FrontendController
         }
         $dataProvider = $searchModel->search($params, $pageSize, $published);
 
-        return $this->render('index.twig', [
+        return $this->render('index'.$this->viewaffix, [
 
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
@@ -68,7 +69,7 @@ class ArticleController extends FrontendController
         $params = Yii::$app->request->queryParams;
         $dataProvider = $searchModel->search($params, $pageSize, $published);
 
-        return $this->render('search.twig',[
+        return $this->render('search'.$this->viewaffix,[
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
             'model' => new Article()
@@ -85,7 +86,7 @@ class ArticleController extends FrontendController
     {
         $model = $this->findModel($id);
         $directory = Yii::getAlias($this->uploadDir. DIRECTORY_SEPARATOR) . $model->id; //where we want to save the file
-        return $this->render('view.twig', [
+        return $this->render('view'.$this->viewaffix, [
             'model' => $model,
             'attachments' => $model->attachments,
             'dir' => $directory,
@@ -111,7 +112,7 @@ class ArticleController extends FrontendController
                 return $this->redirect(['view', 'id' => $model->id]);
             }
         }
-        return $this->render('create.twig', [
+        return $this->render('create'.$this->viewaffix, [
             'model' => $model,
         ]);
     }
@@ -146,7 +147,7 @@ class ArticleController extends FrontendController
             } 
             else 
             {
-                return $this->render('update.twig', [
+                return $this->render('update'.$this->viewaffix, [
                     'model' => $model,
                 ]);
             }
@@ -198,7 +199,7 @@ class ArticleController extends FrontendController
         $searchModel = new ArticleSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams, $pageSize, $published);
 
-        return $this->render('admin.twig', [
+        return $this->render('admin'.$this->viewaffix, [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);

@@ -1,0 +1,47 @@
+{{ use('nenad.passwordStrength.PasswordInput') }}
+{{ use('yii.helpers.Html') }}
+{{ use('yii.bootstrap.ActiveForm') }}
+
+{#/* @var $this yii\web\View */#}
+{#/* @var $form yii\bootstrap\ActiveForm */#}
+{#/* @var $model \frontend\models\SignupForm */#}
+{{ set(this, 'title', t('Signup')) }}
+{{ set(this, 'params', {
+    'breadcrumbs': [
+    {'label': this.title}
+    ]
+}) }}
+
+<div class="site-signup">
+
+    <div class="col-lg-4 col-lg-push-4 box bs-component">
+
+        <hr>
+        <h3 class="text-center">{{ this.title }}</h3>
+        <hr>
+
+        <p>{{ t('Please fill out the following fields to signup:') }}</p>
+
+        {% set form = active_form_begin({
+            'id' : 'signup-form',
+            'action': '/signup',
+            'options' : {'class' : ''},
+        }) %}
+            {{ form.field(model, 'username') | raw }}
+            {{ form.field(model, 'email') | raw }}
+            {{ form.field(model, 'password').widget(PasswordInput(), []) | raw }}
+
+            <div class="form-group">
+                {{ html('SubmitButton',[t('Signup'), {'class': 'btn btn-primary', 'name': 'signup-button'}]) | raw }}
+            </div>
+
+        {{ active_form_end() }}
+
+        {% if model.scenario == 'rna' %}
+            <div style="color:#666;margin:1em 0">
+                <i>*{{ t('We will send you an email with account activation link.') }}</i>
+            </div>
+        {% endif %}
+
+    </div>
+</div>

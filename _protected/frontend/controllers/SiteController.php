@@ -29,6 +29,7 @@ class SiteController extends FrontendController
      *
      * @return array
      */
+    private $viewaffix = '.twig'; //null to use .php views, can be set to .twig
     public function beforeAction($action) {
         $this->enableCsrfValidation = false;
         return parent::beforeAction($action);
@@ -103,7 +104,7 @@ class SiteController extends FrontendController
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        return $this->render('index'.$this->viewaffix);
     }
 
     /**
@@ -113,7 +114,7 @@ class SiteController extends FrontendController
      */
     public function actionAbout()
     {
-        return $this->render('about.twig');
+        return $this->render('about'.$this->viewaffix);
     }
 
     /**
@@ -140,7 +141,7 @@ class SiteController extends FrontendController
             return $this->refresh();
         } 
         
-        return $this->render('contact.twig', [
+        return $this->render('contact'.$this->viewaffix, [
             'model' => $model,
         ]);
     }
@@ -185,7 +186,7 @@ class SiteController extends FrontendController
         // account is activated, but some other errors have happened
         else
         {
-            return $this->render('login.twig', [
+            return $this->render('login'.$this->viewaffix, [
                 'model' => $model,
             ]);
         }
@@ -334,7 +335,7 @@ class SiteController extends FrontendController
             }
         }
                 
-        return $this->render('signup', [
+        return $this->render('signup'.$this->viewaffix, [
             'model' => $model,
         ]);     
     }

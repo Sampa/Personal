@@ -1,12 +1,8 @@
-{{ use('yii.widgets.Pjax') }}
-
 {{ nav_bar_begin({
-    'brandLabel': '<div class="dovieBrand">
-            <img  src="' ~ app.view.theme.baseUrl ~ '/img/redhand.svg"><span> Dovie\' andi se tovya sagain</span>
-            </div>',
+    'brandLabel': app.name,
     'brandUrl': app.homeUrl,
     'brandOptions': {'style': 'display: block;'},
-    'options': { 'class': 'navbar-default' },
+    'options': { 'class': 'navbar-default navbar-fixed-top' },
     'renderInnerContainer': true,
 }) }}
 
@@ -38,12 +34,29 @@
         ]
     }]) %}
 {% endif %}
+{#display Signup and Login pages to guests of the site#}
 
-    {{ nav_widget({
-        'options': { 'class': 'navbar-nav navbar' },
-        'items': menuItems
-    }) | raw }}
+{% if app.user.isGuest %}
+    {% set menuItems = menuItems|merge([
+        { 'label': t('Signup'), 'url': ['/signup'] },
+        { 'label': t('Login'), 'url': ['/login'] }
+    ]) %}
+{% else %}
+    {#display Logout to all logged in users#}
+    {% set menuItems = menuItems|merge([
+    {
+        'label': t('Logout') ~ ' (' ~ app.user.identity.username ~ ')',
+        'url': ['/site/logout'],
+        'linkOptions': {'data-method': 'post'},
+    }
+    ]) %}
+{% endif %}
 
-    {{ nav_bar_end() }}
+{{ nav_widget({
+    'options': { 'class': 'navbar-nav navbar-right' },
+    'items': menuItems
+}) | raw }}
+
+{{ nav_bar_end() }}
 
 

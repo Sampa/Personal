@@ -91,7 +91,6 @@ footer p { margin: 0; padding: 50px 0;}
 #secondNav ul{
     text-align: center;
     width: 100%;
-    border: 0px solid rgba(165, 0, 0, 1);
     border-radius: 4px;
     display: block;
     padding: 0px 15px ;
